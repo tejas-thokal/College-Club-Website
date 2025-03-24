@@ -53,25 +53,10 @@ const clubSchema = new mongoose.Schema({
 // Create Club Model
 const Club = mongoose.model('Club', clubSchema);
 
-// <<<<<<< HEAD
-// Club.insertMany([
-//     { name: 'AISA', description: 'AI & Machine Learning Club' },
-//         { name: 'IEEE', description: 'Institute of Electrical and Electronics Engineers',logo:"https://brand-experience.ieee.org/wp-content/uploads/2016/12/LogoTest-e1481836752230.png" },
-//         { name: 'EDC', description: 'Entrepreneurship Development Cell', logo:"https://edcviit.com/assets20/css/EDC_LOGO.png" },
-//         { name: 'Vishwa Racers', description: 'Automobile Engineering Club', logo:"/Images/vishwa-racers-logo.jpeg" },
-//         { name: 'GFG', description: 'GeeksForGeeks Coding Club',logo:"https://media.geeksforgeeks.org/wp-content/uploads/20201013141649/389.PNG" },
-//         { name: 'NSS VIIT', description: 'Sports Club at VIIT',logo:"https://res.cloudinary.com/diyw5ilre/image/upload/v1714587159/nss-logo_wecruv.png" }
-// ]).then((data)=>{
-//     console.log("inserted");
-// }).catch((err)=> console.log(err));
-// =======
+
 // Sample Data for Insertion
 const sampleData = [
     {
-
-
-        // The Artificial Intelligence Student's Association at VIIT College connects AI enthusiasts through workshops, projects, and networking, providing resources and mentorship to help students excel in AI and Data
-
         name: "AISA Club",
         description: "The Artificial Intelligence Student's Association at VIIT Collage Connect AI enthusiasts through workshops, projects, and networking, providing resources and mentorship to help students excel in AI and Data ",
         clubLogo: "https://www.aisa-viit.com/images/Logos/AISA-DARK.png",
