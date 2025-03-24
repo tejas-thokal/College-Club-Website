@@ -13,8 +13,23 @@
 
 /* ------offline Event ----- */
 
+h1{
+    margin-bottom: 20px;
+}
+
 .offline-event{
     margin-top: 40px;
+}
+
+/*----online Event------*/
+
+.card{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover{
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    cursor: pointer;
 }
 
 .online-event{
@@ -25,16 +40,26 @@
 /* ----clubs logo -------*/
 .square-card {
     width: 100%;
-    background-color: #ddd; /* Light grey background */
+    background-color: #ddd;
     border-radius: 10px;
     display: flex;
-    align-items: center;  /* Ensures the logo is centered */
+    align-items: center; 
     justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.square-card:hover{
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    cursor: pointer;
 }
 
 .square-card img {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image covers the square properly */
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    padding: 10px; 
+    mix-blend-mode: multiply;
+    background-color: transparent;
 }
+

@@ -4,8 +4,7 @@
 }
 
 .navbar-brand{
-    color: white;
-    font-weight: bolder;
+    margin-left: 15px;
 }
 
 .navbar-nav{

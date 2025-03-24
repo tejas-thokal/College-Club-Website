@@ -1,0 +1,38 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+    <form method="post" action="/college_club/addEvent">
+        <div class="container">
+            <h1>Add Event</h1>
+
+            <div class="mb-3">
+                <label for="Event_Name" class="form-label">Event Name</label>
+                <input type="text" id="Event_Name" name="Event_Name" placeholder="Enter Name of Event" class="form-control" required>
+                <div class="valid-feedback">Looks good</div>
+                <div class="invalid-feedback">Please Provide Valid Title</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="Event_Description" class="form-label">Description</label>
+                <input type="text" id="Event_Description" name="Event_Description" placeholder="Enter Description of Event" class="form-control" required>
+                <div class="valid-feedback">Looks good</div>
+                <div class="invalid-feedback">Please Provide Valid Description</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="Event_Image" class="form-label">Image</label>
+                <input type="text" id="Event_Image" name="Event_Image" placeholder="Give URL of Image" class="form-control">
+                <div class="valid-feedback">Looks good</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="Event_Link" class="form-label">Registration Link</label>
+                <input type="text" id="Event_Link" name="Event_Link" placeholder="Enter Registration Link" class="form-control">
+                <div class="valid-feedback">Looks good</div>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="add-btn">Add</button>
+            </div>
+        </div>
+    </form>
+</body>
