@@ -1,0 +1,105 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+    <div class="img-container">
+        <img
+        src=""
+        class="img-fluid home-img rounded-top"
+        alt=""
+        id="slideshows"
+    />
+    </div>
+
+    <div class="offline-event justify-content-center">
+        <h1>Offline Events</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+            
+            <div class="col">
+                <div class="card h-100" style="width: 18rem;">
+                    <img src="https://i.pinimg.com/736x/c6/f7/5c/c6f75cdadb474ef4b0761dc94a8fc731.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col">
+                <div class="card h-100" style="width: 18rem;">
+                    <img src="https://i.pinimg.com/736x/c6/f7/5c/c6f75cdadb474ef4b0761dc94a8fc731.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col">
+                <div class="card h-100" style="width: 18rem;">
+                    <img src="https://i.pinimg.com/736x/c6/f7/5c/c6f75cdadb474ef4b0761dc94a8fc731.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+    <div class="online-event">
+        <h1>Online Events</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+            
+            <div class="col">
+                <div class="card h-100" style="width: 18rem;">
+                    <img src="https://i.pinimg.com/736x/c6/f7/5c/c6f75cdadb474ef4b0761dc94a8fc731.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col">
+                <div class="card h-100" style="width: 18rem;">
+                    <img src="https://i.pinimg.com/736x/c6/f7/5c/c6f75cdadb474ef4b0761dc94a8fc731.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col">
+                <div class="card h-100" style="width: 18rem;">
+                    <img src="https://i.pinimg.com/736x/c6/f7/5c/c6f75cdadb474ef4b0761dc94a8fc731.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <h1>Clubs</h1>
+        <div class="row row-cols-2 row-cols-md-3 g-4">
+            <% for(Clubs of data){ %>
+                <div class="col" >
+                    <div class="square-card">
+                        <img src="<%= Clubs.logo %>" alt="">
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+

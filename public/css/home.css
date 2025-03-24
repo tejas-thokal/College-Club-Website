@@ -1,0 +1,40 @@
+.img-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img{
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+
+/* ------offline Event ----- */
+
+.offline-event{
+    margin-top: 40px;
+}
+
+.online-event{
+    margin-top: 40px;
+}
+
+
+/* ----clubs logo -------*/
+.square-card {
+    width: 100%;
+    background-color: #ddd; /* Light grey background */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;  /* Ensures the logo is centered */
+    justify-content: center;
+}
+
+.square-card img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the square properly */
+}

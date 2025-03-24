@@ -1,0 +1,40 @@
+.nav-link{
+    color: #222222 !important;
+}
+
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+    vertical-align: middle;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+
+.f-info{
+    background-color: #ededed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 8rem;
+    margin-top: 20px;
+}
+
+.f-info-social,.f-info-brand{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-info-social i{
+    margin-right: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.f-info-links{
+    width: 100%;
+    text-align: center;
+}

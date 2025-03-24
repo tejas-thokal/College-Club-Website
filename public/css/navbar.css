@@ -1,0 +1,15 @@
+.navbar-nav .nav-link {
+    color: white !important;  /* Ensures text color is white */
+    font-weight: bold;  /* Proper way to make text bold */
+}
+
+.navbar-brand{
+    color: white;
+    font-weight: bolder;
+}
+
+.navbar-nav{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+}
