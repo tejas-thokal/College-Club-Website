@@ -13,14 +13,14 @@
         <h1>Offline Events</h1>
         <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
             
-            <% for(events of event){ %>
+            <% for(let events of event){ %>
                 <div class="col">
                     <div class="card h-100" style="width: 18rem;">
                         <img src="<%=events.Event_Image %>" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title"><%=events.Event_Name %></h5>
                             <p class="card-text"><%=events.Event_Description %></p>
-                            <a href="<%=events.Event.Link %>" class="btn btn-primary">Go somewhere</a>
+                            <a href="<%=events.Event_Link %>" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
     
             <div class="col">
                 <div class="card h-100" style="width: 18rem;">
-                    <img src="https://i.pinimg.com/736x/c6/f7/5c/c6f75cdadb474ef4b0761dc94a8fc731.jpg" class="card-img-top" alt="...">
+                    <img src="https://www.aisa-viit.com/images/Logos/AISA-DARK.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -72,14 +72,15 @@
     <div class="container mt-4">
         <h1>Clubs</h1>
         <div class="row row-cols-2 row-cols-md-3 g-4">
-            <% for(Clubs of data){ %>
-                <div class="col" >
+            <% for (let Club of data) { %>
+                <div class="col">
                     <div class="square-card">
-                        <img src="<%= Clubs.logo %>" alt="">
+                        <img src="<%= Club.clubLogo %>" alt="Club Logo">
                     </div>
                 </div>
             <% } %>
         </div>
     </div>
+    
 </body>
 

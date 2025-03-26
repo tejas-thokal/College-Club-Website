@@ -13,24 +13,49 @@ app.use(express.urlencoded({extended: true}));
 
 app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
-main()
-    .then((res) => console.log("database connected..."))
-    .catch(err => console.log(err));
+
+// Define Core Team Schema
+const coreTeamMemberSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    phone: String,
+    photo: String,
+    role: String,
+    department: String
+});
+
+// Define Domain Schema
+const domainSchema = new mongoose.Schema({
+    name: String,
+    description: String,
+    skillsRequired: [String],
+    workInThisDomain: String
+});
+
+// Define Photo Gallery Schema
+const photoGallerySchema = new mongoose.Schema({
+    imageUrl: String,
+    caption: String,
+    description: String
+});
+
+// Define Social Links Schema
+const socialLinksSchema = new mongoose.Schema({
+    instagram: String,
+    linkedin : String,
+});
+
 
 const clubSchema = new mongoose.Schema({
     name: { type: String, required: true },
-    description: { type: String },
-    logo: { type: String, default: "https://www.aisa-viit.com/images/Logos/AISA-DARK.png" },
-    // admin: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-    // events: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Event' }],
-})
-
+    description: String,
+    clubLogo: {type: String ,required :true },
+    social_links: socialLinksSchema,
+    coreTeam: [coreTeamMemberSchema],
+    domains: [domainSchema],
+    photoGallery: [photoGallerySchema]
+});
 const Club = new mongoose.model("Club", clubSchema);
-
-async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/wt_pbl');
-}
-
 
 main().then((res)=>console.log("database connected..."))
 .catch(err => console.log(err));
@@ -57,28 +82,17 @@ app.get("/", async (req, res) => {
     try {
         let data = await Club.find();
         let event= await Event.find();
-        console.log(event)
-        res.render("home.ejs", { data,event });
+        console.log(event);
+        console.log(data[0].clubLogo);
+        res.render("home", { data,event });
     } catch (err) {
         console.group(err);
     }
-})
+});
 
 app.get("/college_club/addEvent",(req,res)=>{
     res.render("addEvent.ejs");
-})
-
-// app.post("/college_club/addEvent",async(req,res)=>{
-//     let{Event_Name,Event_Description,Event_Image,Event_Link}=req.body;
-//     let newEvent = new Event({
-//         Event_Name,
-//         Event_Description,
-//         Event_Image,
-//         Event_Link,
-//     })
-//     await newEvent.save();
-//     console.log(newEvent);
-// })
+});
 
 app.post("/college_club/addEvent", async (req, res) => {
     try {
@@ -90,12 +104,13 @@ app.post("/college_club/addEvent", async (req, res) => {
         }
 
         // Create a new event document
-        let newEvent = new Event({
-            Event_Name,
-            Event_Description,
-            Event_Image,
-            Event_Link,
+        const newEvent = new Event({
+            Event_Name: req.body.Event_Name,
+            Event_Description: req.body.Event_Description,
+            Event_Image: req.body.Event_Image || undefined,  // Ensures Mongoose applies the default value
+            Event_Link: req.body.Event_Link
         });
+        
 
         // Save the event
         await newEvent.save();

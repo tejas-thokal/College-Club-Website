@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-main().then((res)=>console.log("database connected..."))
+main().then((res)=>console.log("database connected for the Event collections ..."))
 .catch(err => console.log(err));
 
 async function main() {
@@ -16,12 +16,14 @@ const eventSchema=new mongoose.Schema({
         type:String,required:true
     },
     Event_Image: { 
-        type: String, default: "/Images/vishwa-racers-logo.jpeg" 
+        type: String, default: "https://www.aisa-viit.com/images/Logos/AISA-DARK.png" 
     },
     Event_Link:{
         type:String
     }
-})
+});
 
 const Event=mongoose.model("Event",eventSchema);
+
+
 

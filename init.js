@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-main().then((res) => console.log("database connected..."))
+main().then((res) => console.log("database connected for the club collections ..."))
     .catch(err => console.log(err));
 
 async function main() {
@@ -43,7 +43,7 @@ const socialLinksSchema = new mongoose.Schema({
 const clubSchema = new mongoose.Schema({
     name: { type: String, required: true },
     description: String,
-    clubLogo: String,
+    clubLogo: {type: String ,required :true },
     social_links: socialLinksSchema,
     coreTeam: [coreTeamMemberSchema],
     domains: [domainSchema],
@@ -59,7 +59,7 @@ const sampleData = [
     {
         name: "AISA Club",
         description: "The Artificial Intelligence Student's Association at VIIT Collage Connect AI enthusiasts through workshops, projects, and networking, providing resources and mentorship to help students excel in AI and Data ",
-        clubLogo: "https://www.aisa-viit.com/images/Logos/AISA-DARK.png",
+        clubLogo: "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg",
         social_links: {
             instagram: "https://www.instagram.com/aisa_viit",
             linkedin: "https://www.linkedin.com/company/aisaviit/posts/?feedView=all"
