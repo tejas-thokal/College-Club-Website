@@ -20,6 +20,9 @@
     align-items: center;
     height: 8rem;
     margin-top: 20px;
+    /* position:fixed;
+    bottom:0px;
+    width:100%; */
 }
 
 .f-info-social,.f-info-brand{

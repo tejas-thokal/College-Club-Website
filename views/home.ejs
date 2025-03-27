@@ -69,18 +69,25 @@
         </div>
     </div>
 
+
     <div class="container mt-4">
-        <h1>Clubs</h1>
-        <div class="row row-cols-2 row-cols-md-3 g-4">
-            <% for (let Club of data) { %>
-                <div class="col">
+    <h1>Clubs</h1>
+    <div class="row row-cols-2 row-cols-md-3 g-4">
+        <% for (let Club of data) { %>
+            <div class="col">
+                <a href="/college-club/<%= Club._id %>">
                     <div class="square-card">
-                        <img src="<%= Club.clubLogo %>" alt="Club Logo">
+                        <!-- Clicking the image redirects to the club details page -->
+                        
+                            <img src="<%= Club.clubLogo %>" alt="Club Logo">
                     </div>
-                </div>
-            <% } %>
-        </div>
+                </a>
+            </div>
+        <% } %>
     </div>
+</div>
+
+
     
 </body>
 

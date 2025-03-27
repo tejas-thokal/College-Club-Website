@@ -1,0 +1,9 @@
+.basicinfo{
+    display: flex;
+    gap: 3rem;
+    margin: 1.3rem;
+}
+
+.desc h1{
+    text-align: center;
+}

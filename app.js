@@ -82,7 +82,7 @@ app.get("/", async (req, res) => {
     try {
         let data = await Club.find();
         let event= await Event.find();
-        console.log(event);
+        // console.log(event);
         console.log(data[0].clubLogo);
         res.render("home", { data,event });
     } catch (err) {
@@ -114,7 +114,7 @@ app.post("/college_club/addEvent", async (req, res) => {
 
         // Save the event
         await newEvent.save();
-        console.log(newEvent);
+        // console.log(newEvent);
         res.render("home.ejs");
 
         res.status(201).json({ message: "Event added successfully", event: newEvent });
@@ -125,3 +125,21 @@ app.post("/college_club/addEvent", async (req, res) => {
 });
 
 
+app.get("/college_club/club",async (req,res)=>{
+    let club = await Club.find();
+    res.render("club",{club});
+});
+
+
+app.get("/college-club/:id", async (req, res) => {
+    try {
+        const club = await Club.findById(req.params.id);
+        if (!club) {
+            return res.status(404).send("Club not found");
+        }
+        res.render("club", { club }); // Pass data to EJS file
+    } catch (error) {
+        console.error("Error fetching club:", error);
+        res.status(400).send("Invalid Club ID");
+    }
+});
