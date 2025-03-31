@@ -1,7 +1,18 @@
-.basicinfo{
-    display: flex;
-    gap: 3rem;
-    margin: 1.3rem;
+.basicinfo {
+    display: grid;
+    grid-template-columns: 55% 45%; /* First div 30%, second div 70% */
+    align-items: center;
+    margin: 2rem;
+}
+
+.logo img {
+    width: 20rem;
+    height: auto;
+}
+
+.sociallinks{
+    text-align: center;
+    justify-content: center;
 }
 
 .desc h1{

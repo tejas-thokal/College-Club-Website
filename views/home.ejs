@@ -1,93 +1,69 @@
 <% layout('/layouts/boilerplate') -%>
-<body>
-    <div class="img-container">
-        <img
-        src=""
-        class="img-fluid home-img rounded-top"
-        alt=""
-        id="slideshows"
-    />
-    </div>
 
-    <div class="offline-event justify-content-center">
-        <h1>Offline Events</h1>
-        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
-            
-            <% for(let events of event){ %>
-                <div class="col">
-                    <div class="card h-100" style="width: 18rem;">
-                        <img src="<%=events.Event_Image %>" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title"><%=events.Event_Name %></h5>
-                            <p class="card-text"><%=events.Event_Description %></p>
-                            <a href="<%=events.Event_Link %>" class="btn btn-primary">Go somewhere</a>
+    <body>
+        <% layout('/layouts/boilerplate') -%>
+        <body>
+            <div class="img-container">
+                <img
+                src=""
+                class="img-fluid home-img rounded-top"
+                alt=""
+                id="slideshows"
+            />
+            </div>
+        
+            <h1>Online Events</h1>
+            <div class="row">
+                <% for (let event of onlineEvents) { %>
+                    <div class="col-md-4">  <!-- Ensure same column width -->
+                        <div class="card shadow-sm"> <!-- Add uniform styles -->
+                            <img src="<%= event.Event_Image %>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= event.Event_Name %></h5>
+                                <p class="card-text"><%= event.Event_Description %></p>
+                                <a href="<%= event.Event_Link %>" class="btn btn-primary">Join Event</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            <% } %>
-    
-        </div>
-    </div>
-
-    <div class="online-event">
-        <h1>Online Events</h1>
-        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+                <% } %>
+            </div>
             
-            <div class="col">
-                <div class="card h-100" style="width: 18rem;">
-                    <img src="https://i.pinimg.com/736x/c6/f7/5c/c6f75cdadb474ef4b0761dc94a8fc731.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h1>Offline Events</h1>
+            <div class="row">
+                <% for (let event of offlineEvents) { %>
+                    <div class="col-md-4">  <!-- Ensure same column width -->
+                        <div class="card shadow-sm"> <!-- Add uniform styles -->
+                            <img src="<%= event.Event_Image %>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= event.Event_Name %></h5>
+                                <p class="card-text"><%= event.Event_Description %></p>
+                                <a href="<%= event.Event_Link %>" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                <% } %>
             </div>
-    
-            <div class="col">
-                <div class="card h-100" style="width: 18rem;">
-                    <img src="https://www.aisa-viit.com/images/Logos/AISA-DARK.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+            
+        
+
+
+        <div class="container mt-4">
+            <h1>Clubs</h1>
+            <div class="row row-cols-2 row-cols-md-3 g-4">
+                <% for (let Club of data) { %>
+                    <div class="col">
+                        <a href="/college-club/<%= Club._id %>">
+                            <div class="square-card">
+                                <!-- Clicking the image redirects to the club details page -->
+
+                                <img src="<%= Club.clubLogo %>" alt="Club Logo">
+                            </div>
+                        </a>
                     </div>
-                </div>
+                    <% } %>
             </div>
-    
-            <div class="col">
-                <div class="card h-100" style="width: 18rem;">
-                    <img src="https://i.pinimg.com/736x/c6/f7/5c/c6f75cdadb474ef4b0761dc94a8fc731.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-    
         </div>
-    </div>
 
 
-    <div class="container mt-4">
-    <h1>Clubs</h1>
-    <div class="row row-cols-2 row-cols-md-3 g-4">
-        <% for (let Club of data) { %>
-            <div class="col">
-                <a href="/college-club/<%= Club._id %>">
-                    <div class="square-card">
-                        <!-- Clicking the image redirects to the club details page -->
-                        
-                            <img src="<%= Club.clubLogo %>" alt="Club Logo">
-                    </div>
-                </a>
-            </div>
-        <% } %>
-    </div>
-</div>
 
-
-    
-</body>
-
+    </body>

@@ -1,5 +1,5 @@
 *{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .img-container{
@@ -59,7 +59,7 @@ h1{
 }
 
 .square-card img {
-    width: 150px;
+    width: 200px;
     height: 150px;
     object-fit: contain;
     padding: 10px; 

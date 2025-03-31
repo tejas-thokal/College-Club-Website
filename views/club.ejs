@@ -1,24 +1,28 @@
 <% layout('/layouts/boilerplate') -%>
 
     <body>
-        <div>
+        <div class="main">
             <div class="basicinfo">
-                <div><img src="<%= club.clubLogo %>" alt="Club Logo" width="200"></div>
-                <div>
+                <div class="logo"><img src="<%= club.clubLogo %>" alt="Club Logo" width="200"></div>
+                <div class="info">
                     <h1>
                         <%= club.name %>
                     </h1>
-                    <h3>Follow Us:</h3>
-                    <a href="<%= club.social_links.instagram %>" target="_blank">Instagram</a> |
-                    <a href="<%= club.social_links.linkedin %>" target="_blank">LinkedIn</a>
                 </div>
             </div>
-            <div class="desc">
-                <h1>Club Information</h1>
-                <p>
-                    <%= club.description %>
-                </p>
-            </div>
+            <section class="sociallinks">
+                <h3>Follow Us:</h3>
+                <a href="<%= club.social_links.instagram %>" target="_blank"><i
+                        class="fa-brands fa-square-instagram"></i></a> |
+                <a href="<%= club.social_links.linkedin %>" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </section>
         </div>
+        <div class="desc">
+            <h1>Club Information</h1>
+            <p>
+                <%= club.description %>
+            </p>
+        </div>
+        
 
     </body>

@@ -50,6 +50,8 @@ const clubSchema = new mongoose.Schema({
     name: { type: String, required: true },
     description: String,
     clubLogo: {type: String ,required :true },
+    vision: [String],
+    mission:[String],
     social_links: socialLinksSchema,
     coreTeam: [coreTeamMemberSchema],
     domains: [domainSchema],
@@ -69,7 +71,8 @@ const eventSchema=new mongoose.Schema({
     Event_Name:{type:String,required:true},
     Event_Description:{type:String,required:true},
     Event_Image:{type:String,default:"https://i.pinimg.com/736x/c6/f7/5c/c6f75cdadb474ef4b0761dc94a8fc731.jpg"},
-    Event_Link:{type:String}
+    Event_Link:{type:String},
+    Event_Type: { type: String, enum: ["Online", "Offline"], required: true },
 })
 
 const Event=mongoose.model("Event",eventSchema);
@@ -78,13 +81,19 @@ app.listen(port, () => {
     console.log("server is live....")
 })
 
-app.get("/", async (req, res) => {
+app.get("/college_club/home", async (req, res) => {
     try {
         let data = await Club.find();
         let event= await Event.find();
-        // console.log(event);
-        console.log(data[0].clubLogo);
-        res.render("home", { data,event });
+
+        const onlineEvents = await Event.find({ Event_Type: "Online" });
+        const offlineEvents = await Event.find({ Event_Type: "Offline" });
+
+        //  Always send these when rendering home.ejs
+        res.render("home", { onlineEvents: onlineEvents || [], offlineEvents: offlineEvents || [] ,data,event});
+
+        // console.log(event)
+        // res.render("home.ejs", { data,event });
     } catch (err) {
         console.group(err);
     }
@@ -97,38 +106,42 @@ app.get("/college_club/addEvent",(req,res)=>{
 app.post("/college_club/addEvent", async (req, res) => {
     try {
         // Ensure the request body has the correct structure
-        const { Event_Name, Event_Description, Event_Image, Event_Link } = req.body;
+        const { Event_Name, Event_Description, Event_Image, Event_Link,Event_Type } = req.body;
 
         if (!Event_Name || !Event_Description || !Event_Link) {
             return res.status(400).json({ message: "Missing required fields" });
         }
 
         // Create a new event document
-        const newEvent = new Event({
+        let newEvent = new Event({
             Event_Name: req.body.Event_Name,
-            Event_Description: req.body.Event_Description,
-            Event_Image: req.body.Event_Image || undefined,  // Ensures Mongoose applies the default value
-            Event_Link: req.body.Event_Link
+            Event_Description:req.body.Event_Description,
+            Event_Image: req.body.Event_Image || undefined ,
+            Event_Link:req.body.Event_Link,
+            Event_Type:req.body.Event_Type,
         });
-        
 
         // Save the event
         await newEvent.save();
-        // console.log(newEvent);
-        res.render("home.ejs");
+        console.log(newEvent);
 
-        res.status(201).json({ message: "Event added successfully", event: newEvent });
+        const onlineEvents = await Event.find({ Event_Type: "Online" });
+        const offlineEvents = await Event.find({ Event_Type: "Offline" });
+
+        // Render home.ejs and pass both arrays
+
+        res.redirect("/college_club/home");
     } catch (error) {
         console.error("Error adding event:", error);
         res.status(500).json({ message: "Internal Server Error" });
     }
 });
 
-
-app.get("/college_club/club",async (req,res)=>{
-    let club = await Club.find();
-    res.render("club",{club});
-});
+// app.get("/college_club/club",async (req,res)=>{
+//     let club = await Club.find();
+//     console.log(club);
+//     res.render("club",{club});
+// });
 
 
 app.get("/college-club/:id", async (req, res) => {
@@ -138,6 +151,7 @@ app.get("/college-club/:id", async (req, res) => {
             return res.status(404).send("Club not found");
         }
         res.render("club", { club }); // Pass data to EJS file
+        console.log(club);
     } catch (error) {
         console.error("Error fetching club:", error);
         res.status(400).send("Invalid Club ID");

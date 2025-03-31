@@ -20,6 +20,11 @@ const eventSchema=new mongoose.Schema({
     },
     Event_Link:{
         type:String
+    },
+    Event_Type : {
+        type:String,
+        enum: ["Online"," Offiline"],
+        required:true
     }
 });
 
