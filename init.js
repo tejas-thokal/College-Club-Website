@@ -580,17 +580,17 @@ const sampleData = [
     // Third club EDC CLUB 
 
     {
-        "name": "EDC Entrepreneurship Development Cell",
-        "description": "The Entrepreneurship Development Cell (EDC) at VIIT Pune is dedicated to fostering a culture of innovation and entrepreneurship. It empowers students to develop their entrepreneurial mindset, providing mentorship, resources, and networking opportunities to transform ideas into successful ventures.",
+        name: "EDC Entrepreneurship Development Cell",
+        description: "The Entrepreneurship Development Cell (EDC) at VIIT Pune is dedicated to fostering a culture of innovation and entrepreneurship. It empowers students to develop their entrepreneurial mindset, providing mentorship, resources, and networking opportunities to transform ideas into successful ventures.",
     
-        "vision": [
+        vision: [
             "To create a dynamic ecosystem that nurtures and supports student entrepreneurs.",
             "To bridge the gap between academic knowledge and real-world business applications.",
             "To inspire students to take entrepreneurial initiatives and start their own ventures.",
             "To collaborate with industry leaders, investors, and mentors to facilitate startup growth.",
             "To establish VIIT Pune as a center for innovation and entrepreneurship."
         ],
-        "mission": [
+        mission: [
             "Providing hands-on training, workshops, and mentorship programs on entrepreneurship.",
             "Organizing startup boot camps, business plan competitions, and hackathons.",
             "Connecting students with industry leaders, investors, and successful entrepreneurs.",
@@ -598,67 +598,67 @@ const sampleData = [
             "Building a strong network of student entrepreneurs and alumni entrepreneurs."
         ],
     
-        "clubLogo": "https://www.viit.ac.in/images/clubs/EDC-logo.png",
-        "social_links": {
-            "instagram": "https://www.instagram.com/edc_viit",
-            "linkedin": "https://www.linkedin.com/company/edc-viit"
+        clubLogo: "https://edcviit.com/assets20/css/EDC_LOGO.png",
+        social_links: {
+            instagram: "https://www.instagram.com/edc_viit",
+            linkedin: "https://www.linkedin.com/company/edc-viit"
         },
-        "coreTeam": [
+        coreTeam: [
             {
-                "name": "Rajesh Sharma",
-                "email": "rajeshsharma.edc@gmail.com",
-                "phone": "9876543210",
-                "photo": "https://www.viit.ac.in/images/clubs/EDC-Team/Rajesh-Sharma.png",
-                "role": "President",
-                "department": "Entrepreneurship & Innovation"
+                name: "Rajesh Sharma",
+                email: "rajeshsharma.edc@gmail.com",
+                phone: "9876543210",
+                photo: "https://www.viit.ac.in/images/clubs/EDC-Team/Rajesh-Sharma.png",
+                role: "President",
+                department: "Entrepreneurship & Innovation"
             },
             {
-                "name": "Pooja Nair",
-                "email": "poojanair.edc@gmail.com",
-                "phone": "9876543211",
-                "photo": "https://www.viit.ac.in/images/clubs/EDC-Team/Pooja-Nair.png",
-                "role": "Vice President",
-                "department": "Entrepreneurship & Innovation"
+                name: "Pooja Nair",
+                email: "poojanair.edc@gmail.com",
+                phone: "9876543211",
+                photo: "https://www.viit.ac.in/images/clubs/EDC-Team/Pooja-Nair.png",
+                role: "Vice President",
+                department: "Entrepreneurship & Innovation"
             },
             {
-                "name": "Amit Deshmukh",
-                "email": "amitdeshmukh.edc@gmail.com",
-                "phone": "9876543212",
-                "photo": "https://www.viit.ac.in/images/clubs/EDC-Team/Amit-Deshmukh.png",
-                "role": "Secretary",
-                "department": "Entrepreneurship & Innovation"
+                name: "Amit Deshmukh",
+                email: "amitdeshmukh.edc@gmail.com",
+                phone: "9876543212",
+                photo: "https://www.viit.ac.in/images/clubs/EDC-Team/Amit-Deshmukh.png",
+                role: "Secretary",
+                department: "Entrepreneurship & Innovation"
             },
             {
-                "name": "Ananya Kulkarni",
-                "email": "ananyakulkarni.edc@gmail.com",
-                "phone": "9876543213",
-                "photo": "https://www.viit.ac.in/images/clubs/EDC-Team/Ananya-Kulkarni.png",
-                "role": "Treasurer",
-                "department": "Entrepreneurship & Innovation"
+                name: "Ananya Kulkarni",
+                email: "ananyakulkarni.edc@gmail.com",
+                phone: "9876543213",
+                photo: "https://www.viit.ac.in/images/clubs/EDC-Team/Ananya-Kulkarni.png",
+                role: "Treasurer",
+                department: "Entrepreneurship & Innovation"
             },
             {
-                "name": "Rohan Patil",
-                "email": "rohanpatil.edc@gmail.com",
-                "phone": "9876543214",
-                "photo": "https://www.viit.ac.in/images/clubs/EDC-Team/Rohan-Patil.png",
-                "role": "Marketing Head",
-                "department": "Entrepreneurship & Innovation"
+                name: "Rohan Patil",
+                email: "rohanpatil.edc@gmail.com",
+                phone: "9876543214",
+                photo: "https://www.viit.ac.in/images/clubs/EDC-Team/Rohan-Patil.png",
+                role: "Marketing Head",
+                department: "Entrepreneurship & Innovation"
             },
             {
-                "name": "Sakshi Verma",
-                "email": "sakshiverma.edc@gmail.com",
-                "phone": "9876543215",
-                "photo": "https://www.viit.ac.in/images/clubs/EDC-Team/Sakshi-Verma.png",
-                "role": "Event Coordinator",
-                "department": "Entrepreneurship & Innovation"
+                name: "Sakshi Verma",
+                email: "sakshiverma.edc@gmail.com",
+                phone: "9876543215",
+                photo: "https://www.viit.ac.in/images/clubs/EDC-Team/Sakshi-Verma.png",
+                role: "Event Coordinator",
+                department: "Entrepreneurship & Innovation"
             },
             {
-                "name": "Prof. Anil Mehta",
-                "email": "anil.mehta@viit.ac.in",
-                "phone": "9988776655",
-                "photo": "https://www.viit.ac.in/images/faculty/anil-mehta.png",
-                "role": "Faculty Mentor",
-                "department": "Entrepreneurship & Innovation"
+                name: "Prof. Anil Mehta",
+                email: "anil.mehta@viit.ac.in",
+                phone: "9988776655",
+                photo: "https://www.viit.ac.in/images/faculty/anil-mehta.png",
+                role: "Faculty Mentor",
+                department: "Entrepreneurship & Innovation"
             }
         ],
 

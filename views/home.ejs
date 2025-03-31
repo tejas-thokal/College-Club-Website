@@ -1,69 +1,74 @@
 <% layout('/layouts/boilerplate') -%>
-
-    <body>
-        <% layout('/layouts/boilerplate') -%>
         <body>
-            <div class="img-container">
-                <img
-                src=""
-                class="img-fluid home-img rounded-top"
-                alt=""
-                id="slideshows"
-            />
-            </div>
-        
-            <h1>Online Events</h1>
-            <div class="row">
-                <% for (let event of onlineEvents) { %>
-                    <div class="col-md-4">  <!-- Ensure same column width -->
-                        <div class="card shadow-sm"> <!-- Add uniform styles -->
-                            <img src="<%= event.Event_Image %>" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title"><%= event.Event_Name %></h5>
-                                <p class="card-text"><%= event.Event_Description %></p>
-                                <a href="<%= event.Event_Link %>" class="btn btn-primary">Join Event</a>
+            <div class="container">
+                <div class="home-img-container">
+                    <div class="home-text">
+                        <h1>Avenges Endgame</h1>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+
+                        <button>Register Now!</button>
+                    </div>
+                    <div class="img-container">
+                        <img
+                        src=""
+                        class="img-fluid home-img rounded-top"
+                        alt=""
+                        id="slideshows"
+                    />
+                    </div>
+
+                </div>
+            
+                <h1>Online Events</h1>
+                <div class="row">
+                    <% for (let event of onlineEvents) { %>
+                        <div class="col-md-4">  <!-- Ensure same column width -->
+                            <div class="card shadow-sm"> <!-- Add uniform styles -->
+                                <img src="<%= event.Event_Image %>" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title"><%= event.Event_Name %></h5>
+                                    <p class="card-text"><%= event.Event_Description %></p>
+                                    <a href="<%= event.Event_Link %>" class="btn btn-primary">Join Event</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <% } %>
-            </div>
-            
-            <h1>Offline Events</h1>
-            <div class="row">
-                <% for (let event of offlineEvents) { %>
-                    <div class="col-md-4">  <!-- Ensure same column width -->
-                        <div class="card shadow-sm"> <!-- Add uniform styles -->
-                            <img src="<%= event.Event_Image %>" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title"><%= event.Event_Name %></h5>
-                                <p class="card-text"><%= event.Event_Description %></p>
-                                <a href="<%= event.Event_Link %>" class="btn btn-primary">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                <% } %>
-            </div>
-            
-        
-
-
-        <div class="container mt-4">
-            <h1>Clubs</h1>
-            <div class="row row-cols-2 row-cols-md-3 g-4">
-                <% for (let Club of data) { %>
-                    <div class="col">
-                        <a href="/college-club/<%= Club._id %>">
-                            <div class="square-card">
-                                <!-- Clicking the image redirects to the club details page -->
-
-                                <img src="<%= Club.clubLogo %>" alt="Club Logo">
-                            </div>
-                        </a>
-                    </div>
                     <% } %>
+                </div>
+                
+                <h1>Offline Events</h1>
+                <div class="row">
+                    <% for (let event of offlineEvents) { %>
+                        <div class="col-md-4">  <!-- Ensure same column width -->
+                            <div class="card shadow-sm"> <!-- Add uniform styles -->
+                                <img src="<%= event.Event_Image %>" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title"><%= event.Event_Name %></h5>
+                                    <p class="card-text"><%= event.Event_Description %></p>
+                                    <a href="<%= event.Event_Link %>" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+                
+            
+    
+    
+            <div class="container mt-4">
+                <h1>Clubs</h1>
+                <div class="row row-cols-2 row-cols-md-3 g-4">
+                    <% for (let Club of data) { %>
+                        <div class="col">
+                            <a href="/college-club/<%= Club._id %>">
+                                <div class="square-card">
+                                    <!-- Clicking the image redirects to the club details page -->
+    
+                                    <img src="<%= Club.clubLogo %>" alt="Club Logo">
+                                </div>
+                            </a>
+                        </div>
+                        <% } %>
+                </div>
             </div>
-        </div>
-
-
-
+            </div>
     </body>

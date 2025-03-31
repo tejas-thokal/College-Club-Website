@@ -1,0 +1,18 @@
+.event-container{
+    width: 80%;
+    padding-top:1.5em;
+    margin-left: 5em;
+}
+
+.btn{
+    border: none;
+    padding: 10px 20px;
+    background-color:#1b998b;
+    color: white;
+}
+
+.button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

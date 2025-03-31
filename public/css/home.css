@@ -2,17 +2,59 @@
     font-size: 1.2rem;
 }
 
+body{
+    background-color: black;
+    color: white;
+}
+
+.container{
+    padding-top: 1.5em;
+}
+
 .img-container{
-    width: 100%;
+    width: 80vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    object-fit: cover;
 }
 
 .home-img{
     margin-top: 20px;
     border-radius: 10px;
+    width: 100vw;
+    height: 60vh;
+    object-fit: cover;
 }
+
+.home-text{
+    position: absolute;
+    top: 50%;
+    left: 3%;
+}
+
+.home-text button{
+    padding: 0.5em;
+    border-radius: 2em;
+    border: none;
+    background-color:#1B998B;
+    color: white;
+    padding: 15px 40px;
+    transition: transform 0.3s ease ;
+}
+
+.home-text button:hover{
+    transform: scale(0.8);
+}
+
+.home-img-container {
+    position: relative;
+    text-align: left;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
 
 
 /* ------offline Event ----- */
