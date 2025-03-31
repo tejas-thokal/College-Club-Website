@@ -343,7 +343,7 @@ const sampleData = [
         ],
 
 
-        clubLogo: "https://media.licdn.com/dms/image/v2/C4D0BAQH6Y9V3I9Swrg/company-logo_200_200/company-logo_200_200/0/1646404871825?e=1748476800&v=beta&t=CwzlapzcmktfvYPN41RxROUhWkXbIqm_wD2nhkm_UT8",
+        clubLogo: "https://imgs.search.brave.com/C5ZORQuhU3WNUGT_cm6C775pDSzE4PlX7R39K5xoVgw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly8xMDAw/bG9nb3MubmV0L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDE5LzAz/L0lFRUUtTG9nby01/MDB4MjgxLnBuZw",
         social_links: {
             instagram: "https://www.instagram.com/ieee_viit/",
             linkedin: "https://www.linkedin.com/company/ieee-viit-student-branch/"

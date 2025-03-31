@@ -18,3 +18,23 @@
 .desc h1{
     text-align: center;
 }
+
+
+/*------Members -------*/
+.card-body{
+    text-align: center;
+}
+
+
+/*------Domains -------*/
+.domains{
+    border-radius: 50%;
+}
+
+.domains img{
+    transition: transform 0.2s ease;
+}
+
+.domains img:hover{
+    transform: scale(1.1);
+}
