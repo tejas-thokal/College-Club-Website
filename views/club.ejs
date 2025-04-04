@@ -48,8 +48,8 @@
                 <h1>Our Domains</h1>
                 <div class="domains  row row-cols-2 row-cols-md-3 g-4">
                     <% club.domains.forEach(domain=>{ %>
-                        <img src="https://img.freepik.com/free-photo/portrait-young-indian-top-manager-t-shirt-tie-crossed-arms-smiling-white-isolated-wall_496169-1513.jpg?t=st=1743406760~exp=1743410360~hmac=7f9260f9e687122609de920b733cb2dddedefcbe936cf3ea66b8e2e5e35342f3&w=996 %>"
-                            alt="..." style="border-radius: 50%; height: 10em; width: 14em;">
+                        <img src="https://www.aisa-viit.com/images/domains/event.png" alt="" style="height: auto; width: 14em;">
+                        <h1><%=domain.name%></h1>
                         <% }) %>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                 <section class="team-section">
                     <% club.coreTeam.forEach(member=> { %>
                         <div class="profile-card" >
-                            <img src="https://res.cloudinary.com/dmokljnng/image/upload/c_crop,w_700,h_1022/v1726578664/WhatsApp_Image_2024-09-17_at_09.23.44_c72cfeee_asdy0v.jpg"
+                            <img src="<%=member.photo%>"
                                 alt="">
                             <div class="info-overlay">
                                 <div class="member-name">

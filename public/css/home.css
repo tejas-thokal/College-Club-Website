@@ -3,8 +3,9 @@
 }
 
 body{
-    background-color: rgb(48, 43, 43);
-    color: white;
+    background-image: url(https://res.cloudinary.com/diyw5ilre/image/upload/v1715015170/nss/team-bg_ddm0jx.jpg);
+    /* background-color: rgb(48, 43, 43); */
+    color: rgb(5, 5, 5);
 }
 
 .container{

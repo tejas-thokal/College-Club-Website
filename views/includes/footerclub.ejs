@@ -1,0 +1,57 @@
+<footer class="footer" style="background-color:black; color:rgb(254, 253, 253);">
+    <div class="footer-left">
+        <h1>
+            AISA VIIT
+        </h1>
+        <!-- <p class="footer-links"><a href="/home">Home</a> | <a href="/about">About</a> | <a href="/contact">Contact</a> |
+            <a href="/events">Events</a></p> -->
+        <p class="footer-company-name">Copyright &copy; 2025
+            <strong>Devloped by: <%=club.name%> </strong>
+            All rights reserved
+        </p>
+    </div>
+    <hr class="fotter-hr" style="color:white" ;>
+    <div class="footer-center">
+        <div class="icons">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>VIIT PUNE</p>
+        </div>
+        <br>
+        <div class="icons">
+            <i class="fa-solid fa-phone"></i>
+            <P>91+ 9699205699</P>
+        </div>
+        <br>
+        <div class="icons">
+            <i class="fa-solid fa-envelope"></i>
+            <p>rushikesh.2223102225@viit.ac.in</p>
+        </div>
+    </div>
+    <hr class="fotter-hr" style="color:white" ;>
+    <div class="footer-company-about">
+        <h3>About the AISA VIIT
+        </h3>
+        <br>
+        <strong>
+            <%=club.description%>
+        </strong>
+        <div style="display:flex; justify-content:center; text-align:center; gap:1.2rem;">
+            <div class="icons">
+                <a href="<%= club.social_links.instagram %>" target="_blank"><i class="fa-brands fa-instagram"
+                        style="color: #ffffff;"></i></a> 
+            </div>
+            <div class="icons">
+                <a href="<%= club.social_links.linkedin %>" target="_blank"><i class="fa-brands fa-linkedin"
+                        style="color: #f7f7f7;"></i></a>   
+            </div>
+            <div class="icons">
+                <a href="<%= club.social_links.linkedin %>" target="_blank"><i class="fa-brands fa-youtube"
+                        style="color: #d00b0b;"></i></a>   
+            </div>
+            <div class="icons">
+                <a href="<%= club.social_links.linkedin %>" target="_blank"><i class="fa-brands fa-x-twitter"
+                        style="color: #f0f2f4;"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
