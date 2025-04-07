@@ -27,8 +27,8 @@
                                 <img src="<%= event.Event_Image %>" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title"><%= event.Event_Name %></h5>
-                                    <p class="card-text"><%= event.Event_Description %></p>
-                                    <a href="<%= event.Event_Link %>" class="btn btn-primary">Join Event</a>
+                                    <p class="card-text truncate-text"><%= event.Event_Description %></p>
+                                    <a href="/college_club/showEvent/<%=event._id %>" class="btn btn-primary">View More</a>
                                 </div>
                             </div>
                         </div>

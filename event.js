@@ -25,7 +25,22 @@ const eventSchema=new mongoose.Schema({
         type:String,
         enum: ["Online"," Offiline"],
         required:true
-    }
+    },
+    Event_Highlight: { 
+        type: String 
+    },
+    Event_Time: { 
+        type: String,
+        required: true 
+    },
+    Event_Date: {
+        type: String,
+        required: true 
+    },
+    Event_Location: {
+        type: String,
+        required: true 
+        }
 });
 
 const Event=mongoose.model("Event",eventSchema);

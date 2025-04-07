@@ -1,0 +1,22 @@
+<% layout('/layouts/boilerplate') -%>
+
+<body>
+    <div class="main">
+        <div class="content-box">
+          <div class="left-box">
+            <div class="event-image" style="width: 80%; height: 60%; background-color: #d3d3d3; border-radius: 5px;">
+              <img src="<%=event.Event_Image %>" alt=""> 
+              <div class="event-btn">
+                <h2><%= event.Event_Name %></h2>
+                <button class="btn-primary"><a href="<%=event.Event_Link %>">Join Event</a></button>
+              </div>
+              <h4 class="desc des"><%= event.Event_Description %></h4>
+              <h4><strong><%= event.Event_Highlight %></strong></h4>
+              <h6><strong>Event Type: <%=event.Event_Type%></strong></h6>
+              <h6><strong>Event Date: <%=event.Event_Date%></strong></h6>
+              <h6><strong>Event Location: <%=event.Event_Location%></strong></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>

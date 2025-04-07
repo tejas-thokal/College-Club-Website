@@ -73,6 +73,11 @@ const eventSchema=new mongoose.Schema({
     Event_Image:{type:String,default:"https://i.pinimg.com/736x/c6/f7/5c/c6f75cdadb474ef4b0761dc94a8fc731.jpg"},
     Event_Link:{type:String},
     Event_Type: { type: String, enum: ["Online", "Offline"], required: true },
+    Event_Highlight: { type: String },
+    Event_Time: { type: String, required: true },
+    Event_Date: { type: String, required: true },
+    Event_Location: { type: String, required: true }
+
 })
 
 const Event=mongoose.model("Event",eventSchema);
@@ -106,7 +111,7 @@ app.get("/college_club/addEvent",(req,res)=>{
 app.post("/college_club/addEvent", async (req, res) => {
     try {
         // Ensure the request body has the correct structure
-        const { Event_Name, Event_Description, Event_Image, Event_Link,Event_Type } = req.body;
+        const { Event_Name, Event_Description, Event_Image, Event_Link,Event_Type,Event_Date,Event_Time,Event_Location,Event_Highlight } = req.body;
 
         if (!Event_Name || !Event_Description || !Event_Link) {
             return res.status(400).json({ message: "Missing required fields" });
@@ -119,6 +124,10 @@ app.post("/college_club/addEvent", async (req, res) => {
             Event_Image: req.body.Event_Image || undefined ,
             Event_Link:req.body.Event_Link,
             Event_Type:req.body.Event_Type,
+            Event_Highlight:req.body.Event_Highlight,
+            Event_Date:req.body.Event_Date,
+            Event_Time:req.body.Event_Time,
+            Event_Location:req.body.Event_Location
         });
 
         // Save the event
@@ -137,12 +146,6 @@ app.post("/college_club/addEvent", async (req, res) => {
     }
 });
 
-// app.get("/college_club/club",async (req,res)=>{
-//     let club = await Club.find();
-//     console.log(club);
-//     res.render("club",{club});
-// });
-
 
 app.get("/college-club/:id", async (req, res) => {
     try {
@@ -157,3 +160,17 @@ app.get("/college-club/:id", async (req, res) => {
         res.status(400).send("Invalid Club ID");
     }
 });
+
+
+app.get("/college_club/showEvent/:id",async (req,res)=>{
+    try{
+        let event=await Event.findById(req.params.id);
+        console.log(event)
+        if(!event){
+            return res.status(404).send("Event not found")
+        }
+        res.render("showEvent",{event})
+    } catch(error){
+        console.log(error);
+    }
+})

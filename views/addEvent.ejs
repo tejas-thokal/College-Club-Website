@@ -15,8 +15,8 @@
 
                 <div class="mb-3">
                     <label for="Event_Description" class="form-label">Description</label>
-                    <input type="text" id="Event_Description" name="Event_Description"
-                        placeholder="Enter Description of Event" class="form-control" required>
+                    <textarea type="text" id="Event_Description" name="Event_Description"
+                        placeholder="Enter Description of Event" class="form-control" required></textarea>
                     <div class="valid-feedback">Looks good</div>
                     <div class="invalid-feedback">Please Provide Valid Description</div>
                 </div>
@@ -24,6 +24,24 @@
                 <div class="mb-3">
                     <label for="Event_Image" class="form-label">Image</label>
                     <input type="text" id="Event_Image" name="Event_Image" placeholder="Give URL of Image"
+                        class="form-control">
+                    <div class="valid-feedback">Looks good</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="Event_Date" class="form-label">Event Details</label>
+                    <input type="date" id="Event_Date" name="Event_Date" placeholder="Enter Date of Event"
+                        class="form-control">
+                        <input type="time" id="Event_Time" name="Event_Time" placeholder="Enter Time of Event"
+                        class="form-control">
+                        <input type="text" id="Event_Location" name="Event_Location" placeholder="Enter Location of Event"
+                        class="form-control">
+                    <div class="valid-feedback">Looks good</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="Event_Highlight" class="form-label">Event Highlight</label>
+                    <input type="text" id="Event_Highlight" name="Event_Highlight" placeholder="Enter Event Highlight"
                         class="form-control">
                     <div class="valid-feedback">Looks good</div>
                 </div>
