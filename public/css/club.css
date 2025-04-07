@@ -1,40 +1,90 @@
 .basicinfo {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 55% 45%; /* First div 30%, second div 70% */
+    /* align-items: stretch;
+    margin: 2rem; */ 
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin: 2rem;
+
 }
 
 .logo img {
-    width: 20rem;
+    width: 45rem;
     height: auto;
+    /* padding: 2rem; */
+    margin:7rem 0 5rem 0;
+    background: #383636
 }
 
 .sociallinks{
     text-align: center;
     justify-content: center;
 }
-
 .desc h1{
     text-align: center;
 }
 
-
-/*------Members -------*/
-.card-body{
-    text-align: center;
+.members{
+    gap: 5rem;
+    justify-content: space-evenly;
 }
 
 
-/*------Domains -------*/
-.domains{
-    border-radius: 50%;
-}
 
-.domains img{
-    transition: transform 0.2s ease;
-}
 
-.domains img:hover{
+.team-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    gap: 20px;
+    padding: 20px;
+}
+.profile-card {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    /* background-image: url('https://res.cloudinary.com/dmokljnng/image/upload/c_crop,w_700,h_1022/v1726578664/WhatsApp_Image_2024-09-17_at_09.23.44_c72cfeee_asdy0v.jpg'); */
+}
+.profile-card img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+.profile-card:hover{
+    /* transform: scale(1.1); */
     transform: scale(1.1);
+    transition: all .8s;
+}
+.info-overlay {
+    position: absolute;
+    bottom: -50%;
+    width: 100%;
+    height: 50%;
+    background-image: white;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: bottom 0.5s ease-in-out;
+}
+.profile-card:hover .info-overlay {
+    bottom: 0;
+    opacity:1;
+    background-color: rgb(185, 203, 203);
+}
+.icon-style {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.member-name {
+    font-size: 30px;
+    gap:0.7rem;
+    text-align: center;
 }

@@ -1,0 +1,50 @@
+.footer {
+    background-color: #2d2a30;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: 700 16px sans-serif;
+    padding: 50px 50px 60px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}
+
+.footer-left {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.footer h3 {
+    color: #fff;
+    /* font: 36px Cookie, cursive; */
+    margin: 0;
+}
+.footer a{
+    color: #fff;
+    margin: 20px 0 12px;
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-center .icons{
+    display: flex;
+    gap: 30px;
+}
+
+.footer-company-about{
+    text-align: center;
+}
+
+.icons i {
+    font-size:35px; 
+}
+
+.footer-hr {
+    display: block;
+}

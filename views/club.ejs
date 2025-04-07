@@ -3,7 +3,7 @@
     <body>
         <div class="main">
             <div class="basicinfo">
-                <div class="logo"><img src="<%= club.clubLogo %>" alt="Club Logo" width="200"></div>
+                <div class="logo row row-cols-1 row-cols-md-2 g-4"><img src="<%= club.clubLogo %>" alt="Club Logo"></div>
                 <div class="info">
                     <h1>
                         <%= club.name %>
@@ -26,46 +26,59 @@
         <div class="vision">
             <h1>Club Vision</h1>
             <ul>
-                <% club.vision.forEach(vision => { %>
-                <li><%= vision %></li>
-                <% }); %>
+                <% club.vision.forEach(vision=> { %>
+                    <li>
+                        <%= vision %>
+                    </li>
+                    <% }); %>
             </ul>
         </div>
 
         <div class="mission">
             <h1>Club Mission</h1>
             <ul>
-                <% club.mission.forEach(mission => { %>
-                <li><%= mission %></li>
-                <% }); %>
+                <% club.mission.forEach(mission=> { %>
+                    <li>
+                        <%= mission %>
+                    </li>
+                    <% }); %>
             </ul>
         </div>
-
-        <div class="core-team ">
-            <h1>
-                Our Core Team
-            </h1>
-
-            <div class="members row row-cols-2 row-cols-md-3 g-4">
-                <% club.coreTeam.forEach(person => { %>
-                    <div class="card " style="width: 18rem;">
-                        <img src="https://img.freepik.com/free-photo/portrait-young-indian-top-manager-t-shirt-tie-crossed-arms-smiling-white-isolated-wall_496169-1513.jpg?t=st=1743406760~exp=1743410360~hmac=7f9260f9e687122609de920b733cb2dddedefcbe936cf3ea66b8e2e5e35342f3&w=996 %>" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h3><%= person.name %></h3>
-                            <h6><%= person.role %></h6>
-                        </div>
-                      </div>
-                  <% }) %>
-            </div>
-
             <div class="domain" style="padding-top: 2em;">
                 <h1>Our Domains</h1>
                 <div class="domains  row row-cols-2 row-cols-md-3 g-4">
-                    <% club.domains.forEach(domain =>{ %>
-                        <img src="https://imgs.search.brave.com/fDB4201YRQFH7XPImnshfjljVk5fhKlDSHb4UQSSPUI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ldmVu/dHN0b2RheXouY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDE5/LzAzL2Nzay1sb2dv/LXdhbGxwYXBlci0y/MDE5LmpwZw" alt="..." style="border-radius: 50%; height: 10em; width: 14em;">
-                    <% }) %>
+                    <% club.domains.forEach(domain=>{ %>
+                        <img src="https://www.aisa-viit.com/images/domains/event.png" alt="" style="height: auto; width: 14em;">
+                        <h1><%=domain.name%></h1>
+                        <% }) %>
                 </div>
             </div>
-        </div>
-        
+
+
+            <div class="core-team ">
+                <h1>
+                    Our Core Team
+                </h1>
+                <section class="team-section">
+                    <% club.coreTeam.forEach(member=> { %>
+                        <div class="profile-card" >
+                            <img src="<%=member.photo%>"
+                                alt="">
+                            <div class="info-overlay">
+                                <div class="member-name">
+                                    <%= member.name %>
+                                </div>
+                                <div class="member-role">
+                                    <%= member.role %>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-brands fa-square-instagram"></i>
+                                    <i class="fa-brands fa-linkedin"></i>
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <% }); %>
+                </section>
+            </div>
     </body>

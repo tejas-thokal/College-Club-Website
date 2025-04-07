@@ -18,10 +18,21 @@ const coreTeamMemberSchema = new mongoose.Schema({
     department: String
 });
 
+// Define faculty Team schema
+const facultyMemberSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    phone: String,
+    photo: String,
+    role: String,
+    department: String
+});
+
 // Define Domain Schema
 const domainSchema = new mongoose.Schema({
     name: String,
     description: String,
+    photo: String,
     skillsRequired: [String],
     workInThisDomain: String
 });
@@ -49,6 +60,7 @@ const clubSchema = new mongoose.Schema({
     clubLogo: { type: String, required: true },
     social_links: socialLinksSchema,
     coreTeam: [coreTeamMemberSchema],
+    facultyTeam: [facultyMemberSchema],
     domains: [domainSchema],
     photoGallery: [photoGallerySchema]
 });
@@ -97,7 +109,7 @@ const sampleData = [
                 name: "Tanush Lichade",
                 email: "tanushlichade@gmail.com",
                 phone: "1234567890",
-                photo: "https://example.com/jane.jpg",
+                photo: "https://www.aisa-viit.com/images/Team/2-min.png",
                 role: "Vice President",
                 department: "Artificial Intelligence and Data Science"
             },
@@ -124,7 +136,10 @@ const sampleData = [
                 photo: "https://www.aisa-viit.com/images/Team/5-min.png",
                 role: "HR Manager",
                 department: "Artificial Intelligence and Data Science"
-            },
+            }
+        ],
+
+        facultyTeam: [
             {
                 name: "Prof.Santosh Kumar",
                 email: "santosh.kumar@viit.ac.in",
@@ -142,10 +157,14 @@ const sampleData = [
                 department: "Artificial Intelligence and Data Science"
             }
         ],
+
+
+
         domains: [
             {
                 name: "Technical Team",
                 description: "The Technical Team is responsible for managing and developing digital solutions, ensuring seamless functionality across platforms. It handles website development, software maintenance, and technical troubleshooting for projects and events. The team collaborates to innovate and implement cutting-edge technologies to enhance user experience and efficiency.",
+                photo: "https://www.aisa-viit.com/images/domains/event.png",
                 skillsRequired: [
                     "Programming (HTML, CSS, JavaScript, Python, Java)",
                     "Database Management (MySQL, MongoDB, PostgreSQL)",
@@ -167,6 +186,7 @@ const sampleData = [
             {
                 name: "Design Team",
                 description: "The Design Team is responsible for creating visually appealing and user-friendly designs that enhance the overall user experience. They focus on UI/UX design, graphic design, branding, and prototyping, using tools like Figma, Adobe XD, Canva, and Photoshop. The team collaborates with developers and stakeholders to ensure seamless integration of design elements into projects. Their work involves crafting intuitive interfaces, engaging visuals, and maintaining consistency across digital and print media to effectively communicate ideas and elevate the brand identity.",
+                photo: "https://www.aisa-viit.com/images/domains/design.jpg",
                 skillsRequired: [
                     "UI/UX Design (Figma, Adobe XD, Sketch)",
                     "Graphic Design (Photoshop, Illustrator, Canva)",
@@ -180,6 +200,7 @@ const sampleData = [
             {
                 name: "Finance  Team",
                 description: "The Finance Team plays a crucial role in managing an organization's financial health by overseeing budgeting, expense tracking, financial reporting, and investment planning. They ensure proper fund allocation, risk management, and compliance with financial regulations to maintain transparency and efficiency. The team also analyzes financial data, forecasts future trends, and develops strategies for cost optimization and sustainable growth. Through effective financial management, they support decision-making and contribute to the organization's long-term success.",
+                photo: "https://www.aisa-viit.com/images/domains/event.png",
                 skillsRequired: [
                     "Financial Planning and Budgeting",
                     "Expense Tracking and Cost Management",
@@ -190,11 +211,12 @@ const sampleData = [
                     "Business Strategy and Decision-Making"
                 ],
 
-                workInThisDomain: "orking in the finance domain involves managing financial planning, budgeting, and investment strategies to ensure economic stability and growth. It requires expertise in data analysis, risk assessment, and regulatory compliance to optimize resources and support informed decision-making."
+                workInThisDomain: "working in the finance domain involves managing financial planning, budgeting, and investment strategies to ensure economic stability and growth. It requires expertise in data analysis, risk assessment, and regulatory compliance to optimize resources and support informed decision-making."
             },
             {
                 name: "Publicity Team",
                 description: "The Publicity Team is responsible for promoting events, initiatives, and brand awareness through effective marketing strategies. They handle social media management, content creation, public relations, and campaign planning to engage the target audience. The team works on designing promotional materials, writing press releases, and collaborating with media partners to maximize outreach. By leveraging digital platforms, print media, and innovative marketing techniques, they ensure visibility and engagement for various projects and events.",
+                photo: "https://www.aisa-viit.com/images/domains/publicity.png",
                 skillsRequired: [
                     "Social Media Management (Instagram, Twitter, LinkedIn)",
                     "Content Creation and Copywriting",
@@ -210,6 +232,7 @@ const sampleData = [
             {
                 name: "Active Members Team",
                 description: "The Active Members Team plays a crucial role in ensuring the smooth execution of various events, projects, and initiatives. They actively participate in brainstorming sessions, event planning, and on-ground execution to support the organization’s goals. This team is responsible for coordinating with different departments, assisting in logistics, and ensuring efficient communication and teamwork. Their dedication and enthusiasm drive the success of events, workshops, and community engagement activities.",
+                photo: "https://www.aisa-viit.com/images/domains/design.jpg",
                 skillsRequired: [
                     "Event Planning and Coordination",
                     "Teamwork and Collaboration",
@@ -226,6 +249,7 @@ const sampleData = [
             {
                 name: "Event Management Team",
                 description: "The Event Management Team is responsible for planning, organizing, and executing events seamlessly. They handle venue selection, logistics, budgeting, scheduling, and coordination to ensure the success of various events. The team collaborates with different departments, manages on-site execution, and troubleshoots any issues that arise during the event. They also focus on marketing, sponsorships, and audience engagement to maximize participation and impact. Their goal is to deliver well-organized and memorable events while maintaining efficiency and professionalism.",
+                photo: "https://www.aisa-viit.com/images/domains/event.png",
                 skillsRequired: [
                     "Event Planning and Scheduling",
                     "Budgeting and Cost Control",
@@ -240,6 +264,7 @@ const sampleData = [
             {
                 name: "Documentation Team",
                 description: "The Documentation Team is responsible for maintaining accurate records, reports, and official documents related to events, meetings, and projects. They ensure that all essential information is properly structured, stored, and accessible for future reference. This team works on writing reports, preparing minutes of meetings (MoMs), creating guidelines, and managing project documentation to maintain clarity and transparency. Their work plays a crucial role in preserving organizational knowledge, ensuring smooth workflow, and assisting in decision-making processes.",
+                photo: "https://www.aisa-viit.com/images/domains/active.jpg",
                 skillsRequired: [
                     "Technical Writing and Report Writing",
                     "Minutes of Meeting (MoM) Preparation",
@@ -256,6 +281,7 @@ const sampleData = [
             {
                 name: "Social Media Team",
                 description: "The Social Media Team is responsible for managing and enhancing the organization’s digital presence across various platforms. They handle content creation, audience engagement, branding, and digital marketing strategies to promote events, initiatives, and key messages. The team works on designing visually appealing posts, writing engaging captions, analyzing social media trends, and ensuring consistent interaction with the audience. Their goal is to increase reach, engagement, and brand awareness through creative and strategic social media campaigns.",
+                photo: "https://www.aisa-viit.com/images/domains/event.png",
                 skillsRequired: [
                     "Content Creation and Copywriting",
                     "Social Media Management (Instagram, Facebook, LinkedIn, Twitter, YouTube)",
@@ -268,6 +294,7 @@ const sampleData = [
             {
                 name: "Core Team",
                 description: "The Core Team serves as the backbone of the organization, overseeing operations, decision-making, and strategic planning. They are responsible for team coordination, project management, leadership, and ensuring smooth execution of initiatives. The team works closely with all departments, providing guidance, setting goals, and making key decisions that align with the organization’s vision and objectives. Their role includes resource management, conflict resolution, and long-term planning to ensure efficiency, growth, and sustainability.",
+                photo: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 skillsRequired: [
                     "Leadership and Decision-Making",
                     "Project Management and Strategic Planning",
@@ -407,10 +434,31 @@ const sampleData = [
             }
         ],
 
+        facultyTeam: [
+            {
+                name: "Prof.Santosh Kumar",
+                email: "santosh.kumar@viit.ac.in",
+                phone: "9970279566",
+                photo: "https://media.licdn.com/dms/image/v2/C4E03AQEDomocGo8t2Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1646811948086?e=1748476800&v=beta&t=idTvOK84Uo1LT2PKFUJQjhEqhpCTcQkg8UJky_TcW7g",
+                role: "Head of Department",
+                department: "Artificial Intelligence and Data Science"
+            },
+            {
+                name: "Prof. Renu Kachhoria",
+                email: "renu.kachhoria@viit.ac.in",
+                phone: "8888744203",
+                photo: "https://www.viit.ac.in/images/profiler/avatar1299_caa3a99760cd9c54c79f9763b2da52a5.png",
+                role: "Faculty Co-ordinator",
+                department: "Artificial Intelligence and Data Science"
+            }
+        ],
+
+
         domains: [
             {
                 name: "Technical Team",
                 description: "The Technical Team is responsible for managing and developing digital solutions, ensuring seamless functionality across platforms. It handles website development, software maintenance, and technical troubleshooting for projects and events. The team collaborates to innovate and implement cutting-edge technologies to enhance user experience and efficiency.",
+                photo: "https://www.aisa-viit.com/images/Team/1-min.png",
                 skillsRequired: [
                     "Programming (HTML, CSS, JavaScript, Python, Java)",
                     "Database Management (MySQL, MongoDB, PostgreSQL)",
@@ -432,6 +480,7 @@ const sampleData = [
             {
                 name: "Design Team",
                 description: "The Design Team is responsible for creating visually appealing and user-friendly designs that enhance the overall user experience. They focus on UI/UX design, graphic design, branding, and prototyping, using tools like Figma, Adobe XD, Canva, and Photoshop. The team collaborates with developers and stakeholders to ensure seamless integration of design elements into projects. Their work involves crafting intuitive interfaces, engaging visuals, and maintaining consistency across digital and print media to effectively communicate ideas and elevate the brand identity.",
+                photo: "https://www.aisa-viit.com/images/Team/1-min.png",
                 skillsRequired: [
                     "UI/UX Design (Figma, Adobe XD, Sketch)",
                     "Graphic Design (Photoshop, Illustrator, Canva)",
@@ -445,6 +494,7 @@ const sampleData = [
             {
                 name: "Finance  Team",
                 description: "The Finance Team plays a crucial role in managing an organization's financial health by overseeing budgeting, expense tracking, financial reporting, and investment planning. They ensure proper fund allocation, risk management, and compliance with financial regulations to maintain transparency and efficiency. The team also analyzes financial data, forecasts future trends, and develops strategies for cost optimization and sustainable growth. Through effective financial management, they support decision-making and contribute to the organization's long-term success.",
+                photo: "https://www.aisa-viit.com/images/Team/1-min.png",
                 skillsRequired: [
                     "Financial Planning and Budgeting",
                     "Expense Tracking and Cost Management",
@@ -460,6 +510,7 @@ const sampleData = [
             {
                 name: "Publicity Team",
                 description: "The Publicity Team is responsible for promoting events, initiatives, and brand awareness through effective marketing strategies. They handle social media management, content creation, public relations, and campaign planning to engage the target audience. The team works on designing promotional materials, writing press releases, and collaborating with media partners to maximize outreach. By leveraging digital platforms, print media, and innovative marketing techniques, they ensure visibility and engagement for various projects and events.",
+                photo: "https://www.aisa-viit.com/images/Team/1-min.png",
                 skillsRequired: [
                     "Social Media Management (Instagram, Twitter, LinkedIn)",
                     "Content Creation and Copywriting",
@@ -475,6 +526,7 @@ const sampleData = [
             {
                 name: "Active Members Team",
                 description: "The Active Members Team plays a crucial role in ensuring the smooth execution of various events, projects, and initiatives. They actively participate in brainstorming sessions, event planning, and on-ground execution to support the organization’s goals. This team is responsible for coordinating with different departments, assisting in logistics, and ensuring efficient communication and teamwork. Their dedication and enthusiasm drive the success of events, workshops, and community engagement activities.",
+                photo: "https://www.aisa-viit.com/images/Team/1-min.png",
                 skillsRequired: [
                     "Event Planning and Coordination",
                     "Teamwork and Collaboration",
@@ -491,6 +543,7 @@ const sampleData = [
             {
                 name: "Event Management Team",
                 description: "The Event Management Team is responsible for planning, organizing, and executing events seamlessly. They handle venue selection, logistics, budgeting, scheduling, and coordination to ensure the success of various events. The team collaborates with different departments, manages on-site execution, and troubleshoots any issues that arise during the event. They also focus on marketing, sponsorships, and audience engagement to maximize participation and impact. Their goal is to deliver well-organized and memorable events while maintaining efficiency and professionalism.",
+                photo: "https://www.aisa-viit.com/images/Team/1-min.png",
                 skillsRequired: [
                     "Event Planning and Scheduling",
                     "Budgeting and Cost Control",
@@ -505,6 +558,7 @@ const sampleData = [
             {
                 name: "Documentation Team",
                 description: "The Documentation Team is responsible for maintaining accurate records, reports, and official documents related to events, meetings, and projects. They ensure that all essential information is properly structured, stored, and accessible for future reference. This team works on writing reports, preparing minutes of meetings (MoMs), creating guidelines, and managing project documentation to maintain clarity and transparency. Their work plays a crucial role in preserving organizational knowledge, ensuring smooth workflow, and assisting in decision-making processes.",
+                photo: "https://www.aisa-viit.com/images/Team/1-min.png",
                 skillsRequired: [
                     "Technical Writing and Report Writing",
                     "Minutes of Meeting (MoM) Preparation",
@@ -521,6 +575,7 @@ const sampleData = [
             {
                 name: "Social Media Team",
                 description: "The Social Media Team is responsible for managing and enhancing the organization’s digital presence across various platforms. They handle content creation, audience engagement, branding, and digital marketing strategies to promote events, initiatives, and key messages. The team works on designing visually appealing posts, writing engaging captions, analyzing social media trends, and ensuring consistent interaction with the audience. Their goal is to increase reach, engagement, and brand awareness through creative and strategic social media campaigns.",
+                photo: "https://www.aisa-viit.com/images/Team/1-min.png",
                 skillsRequired: [
                     "Content Creation and Copywriting",
                     "Social Media Management (Instagram, Facebook, LinkedIn, Twitter, YouTube)",
@@ -533,6 +588,7 @@ const sampleData = [
             {
                 name: "Core Team",
                 description: "The Core Team serves as the backbone of the organization, overseeing operations, decision-making, and strategic planning. They are responsible for team coordination, project management, leadership, and ensuring smooth execution of initiatives. The team works closely with all departments, providing guidance, setting goals, and making key decisions that align with the organization’s vision and objectives. Their role includes resource management, conflict resolution, and long-term planning to ensure efficiency, growth, and sustainability.",
+                photo: "https://www.aisa-viit.com/images/Team/1-min.png",
                 skillsRequired: [
                     "Leadership and Decision-Making",
                     "Project Management and Strategic Planning",
@@ -662,10 +718,31 @@ const sampleData = [
             }
         ],
 
+        facultyTeam: [
+            {
+                name: "Prof.Santosh Kumar",
+                email: "santosh.kumar@viit.ac.in",
+                phone: "9970279566",
+                photo: "https://media.licdn.com/dms/image/v2/C4E03AQEDomocGo8t2Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1646811948086?e=1748476800&v=beta&t=idTvOK84Uo1LT2PKFUJQjhEqhpCTcQkg8UJky_TcW7g",
+                role: "Head of Department",
+                department: "Artificial Intelligence and Data Science"
+            },
+            {
+                name: "Prof. Renu Kachhoria",
+                email: "renu.kachhoria@viit.ac.in",
+                phone: "8888744203",
+                photo: "https://www.viit.ac.in/images/profiler/avatar1299_caa3a99760cd9c54c79f9763b2da52a5.png",
+                role: "Faculty Co-ordinator",
+                department: "Artificial Intelligence and Data Science"
+            }
+        ],
+
+
         domains: [
             {
                 name: "Technical Team",
                 description: "The Technical Team is responsible for managing and developing digital solutions, ensuring seamless functionality across platforms. It handles website development, software maintenance, and technical troubleshooting for projects and events. The team collaborates to innovate and implement cutting-edge technologies to enhance user experience and efficiency.",
+                photo: "https://www.aisa-viit.com/images/Team/1-min.png",
                 skillsRequired: [
                     "Programming (HTML, CSS, JavaScript, Python, Java)",
                     "Database Management (MySQL, MongoDB, PostgreSQL)",
@@ -687,6 +764,7 @@ const sampleData = [
             {
                 name: "Design Team",
                 description: "The Design Team is responsible for creating visually appealing and user-friendly designs that enhance the overall user experience. They focus on UI/UX design, graphic design, branding, and prototyping, using tools like Figma, Adobe XD, Canva, and Photoshop. The team collaborates with developers and stakeholders to ensure seamless integration of design elements into projects.",
+                photo: "https://www.aisa-viit.com/images/Team/1-min.png",
                 skillsRequired: [
                     "UI/UX Design (Figma, Adobe XD, Sketch)",
                     "Graphic Design (Photoshop, Illustrator, Canva)",
@@ -700,6 +778,7 @@ const sampleData = [
             {
                 name: "Finance Team",
                 description: "The Finance Team plays a crucial role in managing an organization's financial health by overseeing budgeting, expense tracking, financial reporting, and investment planning. They ensure proper fund allocation, risk management, and compliance with financial regulations to maintain transparency and efficiency.",
+                photo: "https://www.aisa-viit.com/images/Team/1-min.png",
                 skillsRequired: [
                     "Financial Planning and Budgeting",
                     "Expense Tracking and Cost Management",
@@ -714,6 +793,7 @@ const sampleData = [
             {
                 name: "Publicity Team",
                 description: "The Publicity Team is responsible for promoting events, initiatives, and brand awareness through effective marketing strategies. They handle social media management, content creation, public relations, and campaign planning to engage the target audience.",
+                photo: "https://www.aisa-viit.com/images/Team/1-min.png",
                 skillsRequired: [
                     "Social Media Management (Instagram, Twitter, LinkedIn)",
                     "Content Creation and Copywriting",
@@ -729,6 +809,7 @@ const sampleData = [
             {
                 name: "Active Members Team",
                 description: "The Active Members Team plays a crucial role in ensuring the smooth execution of various events, projects, and initiatives. They actively participate in brainstorming sessions, event planning, and on-ground execution to support the organization’s goals.",
+                photo: "https://www.aisa-viit.com/images/Team/1-min.png",
                 skillsRequired: [
                     "Event Planning and Coordination",
                     "Teamwork and Collaboration",
@@ -744,6 +825,7 @@ const sampleData = [
             {
                 name: "Event Management Team",
                 description: "The Event Management Team is responsible for planning, organizing, and executing events seamlessly. They handle venue selection, logistics, budgeting, scheduling, and coordination to ensure the success of various events.",
+                photo: "https://www.aisa-viit.com/images/Team/1-min.png",
                 skillsRequired: [
                     "Event Planning and Scheduling",
                     "Budgeting and Cost Control",
@@ -757,6 +839,7 @@ const sampleData = [
             {
                 name: "Core Team",
                 description: "The Core Team serves as the backbone of the organization, overseeing operations, decision-making, and strategic planning. They are responsible for team coordination, project management, leadership, and ensuring smooth execution of initiatives.",
+                photo: "https://www.aisa-viit.com/images/Team/1-min.png",
                 skillsRequired: [
                     "Leadership and Decision-Making",
                     "Project Management and Strategic Planning",
