@@ -78,9 +78,21 @@
 
 /* domains :hover */
 
+.text-center img {
+    width: 100%;         
+    height: auto;        
+    /* object-fit: cover;    */
+    border-radius: 1rem;
+}
+
+.text-center h3{
+    background-color: rgb(201, 212, 212);
+}
+
 .text-center:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: transform 0.5s ease-in-out;
+    opacity: 0.8;
 }
 
 .profile-card:hover .info-overlay {
