@@ -154,18 +154,17 @@ app.get("/college-club/:id", async (req, res) => {
             return res.status(404).send("Club not found");
         }
         res.render("club", { club }); // Pass data to EJS file
-        console.log(club);
+        // console.log(club);
     } catch (error) {
         console.error("Error fetching club:", error);
         res.status(400).send("Invalid Club ID");
     }
 });
 
-
 app.get("/college_club/showEvent/:id",async (req,res)=>{
     try{
         let event=await Event.findById(req.params.id);
-        console.log(event)
+        // console.log(event)
         if(!event){
             return res.status(404).send("Event not found")
         }
@@ -173,4 +172,4 @@ app.get("/college_club/showEvent/:id",async (req,res)=>{
     } catch(error){
         console.log(error);
     }
-})
+});

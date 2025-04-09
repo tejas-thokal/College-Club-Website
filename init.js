@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Club = require("./models/club");
 
 main().then((res) => console.log("database connected for the club collections ..."))
     .catch(err => console.log(err));
@@ -9,66 +10,6 @@ async function main() {
 
 
 // Define Core Team Schema
-const coreTeamMemberSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-    phone: String,
-    photo: String,
-    role: String,
-    department: String
-});
-
-// Define faculty Team schema
-const facultyMemberSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-    phone: String,
-    photo: String,
-    role: String,
-    department: String
-});
-
-// Define Domain Schema
-const domainSchema = new mongoose.Schema({
-    name: String,
-    description: String,
-    photo: String,
-    skillsRequired: [String],
-    workInThisDomain: String
-});
-
-
-// Define Photo Gallery Schema
-const photoGallerySchema = new mongoose.Schema({
-    imageUrl: String,
-    caption: String,
-    description: String
-});
-
-// Define Social Links Schema
-const socialLinksSchema = new mongoose.Schema({
-    instagram: String,
-    linkedin: String,
-});
-
-// Define Club Schema
-const clubSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    description: String,
-    vision: { type: [String], required: true }, // Vision stored as an array of points
-    mission: { type: [String], required: true }, // Mission stored as an array of points
-    clubLogo: { type: String, required: true },
-    social_links: socialLinksSchema,
-    coreTeam: [coreTeamMemberSchema],
-    facultyTeam: [facultyMemberSchema],
-    domains: [domainSchema],
-    photoGallery: [photoGallerySchema]
-});
-
-// Create Club Model
-const Club = mongoose.model('Club', clubSchema);
-
-
 // Sample Data for Insertion
 const sampleData = [
     {
@@ -311,40 +252,80 @@ const sampleData = [
         ],
         photoGallery: [
             {
-                imageUrl: "https://instagram.fnag1-6.fna.fbcdn.net/v/t51.29350-15/412034832_612502090967536_4421873081870501385_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0uaW1hZ2VfdXJsZ2VuLjg1M3g1Njguc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fnag1-6.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QHYeAja4ysi-CQMIcfQzkXSoU8xel60ym1usUFz5aMYkbRSWk5aqAXwJe15j6tiKqW0iBqcKj-4F8peftYkLcYL&_nc_ohc=ltpiy_iO2QkQ7kNvgHv1N9J&_nc_gid=lE29187Phtymc-zwYJWtMg&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MzI2MTg4MjkyMzA4OTc5MDgxNQ%3D%3D.3-ccb7-5&oh=00_AYHloTjYmLinvpOS0RbhceZBacuL-SrGPfsbGsE5zXbReA&oe=67E95673&_nc_sid=22de04",
-                caption: " Viz-A-Thon 2.0!",
-                description: "Get ready for experiencing a fun filled and innovative ride in the world of data"
-            },
-            {
-                imageUrl: "https://instagram.fnag1-5.fna.fbcdn.net/v/t51.29350-15/403917836_1034445994462687_8756592109102410397_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0uaW1hZ2VfdXJsZ2VuLjYyMXg0NjYuc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fnag1-5.fna.fbcdn.net&_nc_cat=107&_nc_oc=Q6cZ2QHYeAja4ysi-CQMIcfQzkXSoU8xel60ym1usUFz5aMYkbRSWk5aqAXwJe15j6tiKqW0iBqcKj-4F8peftYkLcYL&_nc_ohc=eHXGTGJ5l7UQ7kNvgE6BnMf&_nc_gid=lE29187Phtymc-zwYJWtMg&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MzI0MDk3NTQxMTI2MzU2MDgyNw%3D%3D.3-ccb7-5&oh=00_AYE3VAWVVp4Jbhz4U9KEkS0t9QTEKbajDn6JZojxS9GvHw&oe=67E975B0&_nc_sid=22de04",
-                caption: "Viz-A-Thon 2.0!",
-                description: "enthusiasts,the very first Viz-a-Thon was a grand success Not only did it portray the creativity of the participants but also forced them to think beyond the box such that it became difficult for the judges to choose the best visualisation"
-            },
-            {
-                imageUrl: "https://instagram.fnag1-3.fna.fbcdn.net/v/t51.29350-15/315928710_140685325398324_6112801324721492124_n.webp?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0uaW1hZ2VfdXJsZ2VuLjEwODB4ODEwLnNkci5mMjkzNTAuZGVmYXVsdF9pbWFnZSJ9&_nc_ht=instagram.fnag1-3.fna.fbcdn.net&_nc_cat=100&_nc_oc=Q6cZ2QHdrtAawHr1s6mQ_njCewxO5dIATFRvo2ZpZJjMZtH4-SiU56hy2r3Mq-akveEdmAOZOamLmB79oNCM-7UxAwE0&_nc_ohc=kFwPifDkZzQQ7kNvgG6rJ3Z&_nc_gid=djg6-G-SB7jtnXDunEJNHw&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=Mjk3MzU3MDUzODk2Nzg2ODAxOQ%3D%3D.3-ccb7-5&oh=00_AYGKuBkbrfHdD3rC05lX8lOrotdZqCvz-_b8MGR7sZlB5A&oe=67E94D5A&_nc_sid=22de04",
-                caption: "Unsupervised Learning' delivered by Mr. Lomesh Ahire Sir.",
-                description: "Wonderful guest lecture on the topic 'Unsupervised Learning' delivered by Mr. Lomesh Ahire Sir. We are glad that Sir spared his valuable time to guide the students. Thank you Lomesh Ahire Sir on behalf of whole Dept. Of AI&DS, VIIT."
-            },
-            {
-                imageUrl: "https://instagram.fnag1-2.fna.fbcdn.net/v/t51.29350-15/279380422_536442324548130_3070273423421495222_n.webp?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjk5Nng5OTYuc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fnag1-2.fna.fbcdn.net&_nc_cat=106&_nc_oc=Q6cZ2QEBEI0OT2EtHMwhQqOvvYtyZsBv3ADOPjq9qaN_YwoJnrOstSqF2DpdRF66mhpFO0n5uBipohEvzTNCphY-lMXA&_nc_ohc=UIcmkN9MrVEQ7kNvgF4_51I&_nc_gid=dFE1iG4a6Bq_-NBPav5GLg&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MjgyNjQzNTk1NjUzNDYwNzgwNA%3D%3D.3-ccb7-5&oh=00_AYEot2yTJN5OfSyhvdGSyDWQPlAl3zyPLXtGnbaZJILI3A&oe=67E96293&_nc_sid=22de04",
-                caption: " Greetings from S4DS: Student Chapter VIIT",
-                description: "Cheerful and energetic Inauguration of Society for Data Science Student Chapter VIIT , in presence of respected President Dr.Amol Goje and Secretary Dr.Neha Sharma.Happy to announce that it is the First Professional Student Chapter of AI & DS Dept. We are keen on taking this Student Chapter to greater heights and set a benchmark for the young and inspiring minds!!"
-            },
-            {
-                imageUrl: "https://instagram.fnag1-5.fna.fbcdn.net/v/t51.29350-15/465480477_2012333629187323_267213002862347259_n.jpg?stp=dst-jpg_e15_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0uaW1hZ2VfdXJsZ2VuLjEwODB4MTA4MC5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fnag1-5.fna.fbcdn.net&_nc_cat=107&_nc_oc=Q6cZ2QFWRLlJnClGLWx_5l1HDTDmwZ4iCiBvoHjDG-X2nFXB0iMNLh3GzH6af7ivY1xDjSPzhysSFYgQPxc_JuWWrDdh&_nc_ohc=pSxHrd4GXpQQ7kNvgFP7hsa&_nc_gid=KAowL__XEzvpltGYiPuM0w&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MzQ5NTMyMTI3OTc0NDYxMTI1NA%3D%3D.3-ccb7-5&oh=00_AYG_ZiN96NKdzzegCHuqSIjJm0GG02FUftGx8MNZw3f_HQ&oe=67E97D7D&_nc_sid=22de04",
-                caption: "VIZ-A-THON 3.0",
-                description: "The event aligns perfectly with our mission of driving innovation and supporting the next generation of talent. Hackathons like this are essential to nurturing creativity, problem-solving, and innovation. They provide students with a platform to apply theoretical knowledge to practical challenges, to work collaboratively, and to push the boundaries of their capabilities. The participants of our young minds were absolutely commendable and refreshing. The solutions and ideas presented were not only creative but also had real-world implications."
-            },
-            {
-                imageUrl: "https://instagram.fnag1-3.fna.fbcdn.net/v/t51.29350-15/433778082_7724077624278840_560768824305644827_n.jpg?stp=dst-jpg_e35_p480x480_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IlNUT1JZLmltYWdlX3VybGdlbi4xMTcweDIwODAuc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fnag1-3.fna.fbcdn.net&_nc_cat=100&_nc_oc=Q6cZ2QE_glF-nuXpWhHgLf_l5nj-1XF601YkAQDu1jWsA0-zfdqvK9RwasULgxoKR3nrrNK4DP8PM-MW71wbtOvUzMBu&_nc_ohc=tCjHED-RpCsQ7kNvgEaSdbJ&_nc_gid=kDOCLAe0xXM1eoja8SM-FQ&edm=ADDLYBMBAAAA&ccb=7-5&ig_cache_key=MzMzMjkwMzQyOTA2NTYxNzA0Mw%3D%3D.3-ccb7-5&oh=00_AYFws7FUsRGsZqGRRpT65DSumyQfxRpbF8rIMivloO-f6A&oe=67E962ED&_nc_sid=56bdfd",
+                imageUrl: "https://www.aisa-viit.com/images/Events/dss.jpeg",
                 caption: "Data science Synopsys 24",
                 description: "The AiSA Data Science Symposium 2024 at VIIT Pune is an event focused on cutting-edge developments in AI and data science. It features expert talks, hands-on workshops, and competitions to enhance students' technical and analytical skills. The symposium provides a platform for learning, networking, and exploring real-world applications of data science."
             },
             {
-                imageUrl: "https://instagram.fnag1-2.fna.fbcdn.net/v/t51.29350-15/428493098_298838899876974_4515743920736197084_n.webp?stp=dst-jpg_e35_p480x480_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IlNUT1JZLmltYWdlX3VybGdlbi4xMDgweDE5MjAuc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fnag1-2.fna.fbcdn.net&_nc_cat=106&_nc_oc=Q6cZ2QEibQzBBjjE3uQSx_Sr7qUcL1i1-1otP0D7bs273_nIcGqqxj3Bdz_VsS878w4msHSzvTnaCHe3o8U_J6l_e3fs&_nc_ohc=LE9huGMkjX4Q7kNvgFsyx6f&_nc_gid=Jxr5K_1T-lAA6fGcDSsUqQ&edm=AGFyKLkBAAAA&ccb=7-5&ig_cache_key=MzMwNjc0NjY5MzE0NTM2MDkzOQ%3D%3D.3-ccb7-5&oh=00_AYHHFLtTKm99J5gLEZFtIQU6_6sfG6uN8-aDVdwugvSdKw&oe=67E97529&_nc_sid=5a0a6d",
+                imageUrl: "https://www.aisa-viit.com/images/DSS/b.jpg",
+                caption: " Data science Synopsys 24",
+                description: "Get ready for experiencing a fun filled and innovative ride in the world of data"
+            },
+            {
+                imageUrl: "https://www.aisa-viit.com/images/DSS/a.jpg",
+                caption: " Data science Synopsys 24",
+                description: "Get ready for experiencing a fun filled and innovative ride in the world of data"
+            },
+            {
+                imageUrl: "https://www.aisa-viit.com/images/DSS/d.jpg",
+                caption: " Data science Synopsys 24",
+                description: "Get ready for experiencing a fun filled and innovative ride in the world of data"
+            },
+            {
+                imageUrl: "https://www.aisa-viit.com/images/DSS/e.jpg",
+                caption: " Data science Synopsys 24",
+                description: "Get ready for experiencing a fun filled and innovative ride in the world of data"
+            },
+            {
+                imageUrl: "https://www.aisa-viit.com/images/DSS/f.jpg",
+                caption: " Data science Synopsys 24",
+                description: "Get ready for experiencing a fun filled and innovative ride in the world of data"
+            },
+            {
+                imageUrl: "https://www.aisa-viit.com/images/DSS/i.jpg",
+                caption: "Data science Synopsys 24",
+                description: "Get ready for experiencing a fun filled and innovative ride in the world of data"
+            },
+            {
+                imageUrl: "https://www.aisa-viit.com/images/domains/event.png",
+                caption: "Unsupervised Learning' delivered by Mr. Lomesh Ahire Sir.",
+                description: "Wonderful guest lecture on the topic 'Unsupervised Learning' delivered by Mr. Lomesh Ahire Sir. We are glad that Sir spared his valuable time to guide the students. Thank you Lomesh Ahire Sir on behalf of whole Dept. Of AI&DS, VIIT."
+            },
+            {
+                imageUrl: "https://www.aisa-viit.com/images/Events/viz.jpeg",
+                caption: "VIZ-A-THON 3.0",
+                description: "The event aligns perfectly with our mission of driving innovation and supporting the next generation of talent. Hackathons like this are essential to nurturing creativity, problem-solving, and innovation. They provide students with a platform to apply theoretical knowledge to practical challenges, to work collaboratively, and to push the boundaries of their capabilities. The participants of our young minds were absolutely commendable and refreshing. The solutions and ideas presented were not only creative but also had real-world implications."
+            },
+            {
+                imageUrl: "https://www.aisa-viit.com/images/Events/perc.jpeg",
                 caption: "Gandharv Perception",
                 description: "​Perception 24 is an upcoming technical extravaganza at VIIT's Gandharva festival, promising an electrifying fusion of technology and innovation. Attendees can expect a series of engaging events that showcase the latest advancements in the tech world. This much-awaited event aims to provide a platform for students to demonstrate their technical prowess and creativity"
-            }
+            },
+            {
+                imageUrl: "https://www.aisa-viit.com/images/Vizathon/b.jpg",
+                caption: " Viz-A-Thon 2.0!",
+                description: "Get ready for experiencing a fun filled and innovative ride in the world of data"
+            },
+            {
+                imageUrl: "https://www.aisa-viit.com/images/Vizathon/a.jpg",
+                caption: " Viz-A-Thon 2.0!",
+                description: "Get ready for experiencing a fun filled and innovative ride in the world of data"
+            },
+            {
+                imageUrl: "https://www.aisa-viit.com/images/Vizathon/e.jpg",
+                caption: " Viz-A-Thon 2.0!",
+                description: "Get ready for experiencing a fun filled and innovative ride in the world of data"
+            },
+            {
+                imageUrl: "https://www.aisa-viit.com/images/Vizathon/f.jpg",
+                caption: " Viz-A-Thon 2.0!",
+                description: "Get ready for experiencing a fun filled and innovative ride in the world of data"
+            }, 
+            {
+                imageUrl: "https://www.aisa-viit.com/images/Vizathon/i.jpg",
+                caption: " Viz-A-Thon 2.0!",
+                description: "Get ready for experiencing a fun filled and innovative ride in the world of data"
+            },
         ]
     },
 
@@ -610,22 +591,22 @@ const sampleData = [
                 description: "A flagship event featuring keynote speakers, technical paper presentations, and panel discussions."
             },
             {
-                imageUrl: "https://example.com/images/ieee-hackathon.jpg",
+                imageUrl: "https://example.com/images/ieee-tech-symposium.jpg",
                 caption: "IEEE Hackathon 2024",
                 description: "A 24-hour coding competition where students develop innovative tech solutions."
             },
             {
-                imageUrl: "https://example.com/images/ieee-robo-wars.jpg",
+                imageUrl: "https://example.com/images/ieee-tech-symposium.jpg",
                 caption: "Robo Wars",
                 description: "An electrifying robotics competition where teams battle their self-built robots."
             },
             {
-                imageUrl: "https://example.com/images/ieee-workshop.jpg",
+                imageUrl: "https://example.com/images/ieee-tech-symposium.jpg",
                 caption: "AI & IoT Workshop",
                 description: "Hands-on training on Artificial Intelligence and Internet of Things applications."
             },
             {
-                imageUrl: "https://example.com/images/ieee-industrial-visit.jpg",
+                imageUrl: "https://example.com/images/ieee-tech-symposium.jpg",
                 caption: "Industry Connect Visit",
                 description: "A visit to leading tech industries to understand real-world applications of engineering."
             }
@@ -851,6 +832,33 @@ const sampleData = [
                     "Networking and Stakeholder Management"
                 ],
                 workInThisDomain: "Working in the Core Team domain involves leading teams, making strategic decisions, and ensuring smooth operations across all departments. It requires strong leadership, problem-solving, and organizational skills to drive growth, maintain efficiency, and achieve long-term goals."
+            }
+        ],
+        photoGallery: [
+            {
+                imageUrl: "https://example.com/images/ieee-tech-symposium.jpg",
+                caption: "IEEE Tech Symposium",
+                description: "A flagship event featuring keynote speakers, technical paper presentations, and panel discussions."
+            },
+            {
+                imageUrl: "https://example.com/images/ieee-tech-symposium.jpg",
+                caption: "IEEE Hackathon 2024",
+                description: "A 24-hour coding competition where students develop innovative tech solutions."
+            },
+            {
+                imageUrl: "https://example.com/images/ieee-tech-symposium.jpg",
+                caption: "Robo Wars",
+                description: "An electrifying robotics competition where teams battle their self-built robots."
+            },
+            {
+                imageUrl: "https://example.com/images/ieee-tech-symposium.jpg",
+                caption: "AI & IoT Workshop",
+                description: "Hands-on training on Artificial Intelligence and Internet of Things applications."
+            },
+            {
+                imageUrl: "https://example.com/images/ieee-tech-symposium.jpg",
+                caption: "Industry Connect Visit",
+                description: "A visit to leading tech industries to understand real-world applications of engineering."
             }
         ]
     }

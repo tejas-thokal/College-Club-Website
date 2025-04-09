@@ -74,6 +74,15 @@
     justify-content: center;
     transition: bottom 0.5s ease-in-out;
 }
+
+
+/* domains :hover */
+
+.text-center:hover{
+    transform: scale(1.1);
+    transition: transform 0.5s ease-in-out;
+}
+
 .profile-card:hover .info-overlay {
     bottom: 0;
     opacity:1;
@@ -88,3 +97,28 @@
     gap:0.7rem;
     text-align: center;
 }
+
+.domains{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2rem
+}
+
+.card:hover {
+    /* transform: translateY(15px); */
+    transform: scale(1.1);
+    background-color: #d4d4d4;
+    transition: transform 0.5s ease-in-out;
+
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(196, 118, 118, 0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+

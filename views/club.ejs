@@ -3,7 +3,8 @@
     <body>
         <div class="main">
             <div class="basicinfo">
-                <div class="logo row row-cols-1 row-cols-md-2 g-4"><img src="<%= club.clubLogo %>" alt="Club Logo"></div>
+                <div class="logo row row-cols-1 row-cols-md-2 g-4"><img src="<%= club.clubLogo %>" alt="Club Logo">
+                </div>
                 <div class="info">
                     <h1>
                         <%= club.name %>
@@ -44,41 +45,64 @@
                     <% }); %>
             </ul>
         </div>
-            <div class="domain" style="padding-top: 2em;">
-                <h1>Our Domains</h1>
-                <div class="domains  row row-cols-2 row-cols-md-3 g-4">
-                    <% club.domains.forEach(domain=>{ %>
-                        <img src="https://www.aisa-viit.com/images/domains/event.png" alt="" style="height: auto; width: 14em;">
-                        <h1><%=domain.name%></h1>
-                        <% }) %>
-                </div>
+        <div class="domain" style="padding-top: 2em;">
+            <h1>Our Domains</h1>
+            <div class="domains row row-cols-1 row-cols-md-3 g-4">
+                <% club.domains.forEach(domain=> { %>
+                    <div class="col text-center">
+                        <img src="https://www.aisa-viit.com/images/domains/design.jpg" alt="<%= domain.name %>"
+                            style="height: auto; width: 20em;">
+
+                        <p>
+                            <%= domain.name %>
+                        </p>
+                    </div>
+                    <% }) %>
             </div>
+        </div>
 
 
-            <div class="core-team ">
-                <h1>
-                    Our Core Team
-                </h1>
-                <section class="team-section">
-                    <% club.coreTeam.forEach(member=> { %>
-                        <div class="profile-card" >
-                            <img src="<%=member.photo%>"
-                                alt="">
-                            <div class="info-overlay">
-                                <div class="member-name">
-                                    <%= member.name %>
-                                </div>
-                                <div class="member-role">
-                                    <%= member.role %>
-                                </div>
-                                <div class="icon">
-                                    <i class="fa-brands fa-square-instagram"></i>
-                                    <i class="fa-brands fa-linkedin"></i>
-                                    <i class="fa-solid fa-envelope"></i>
-                                </div>
+
+        <div class="core-team ">
+            <h1>
+                Our Core Team
+            </h1>
+            <section class="team-section">
+                <% club.coreTeam.forEach(member=> { %>
+                    <div class="profile-card">
+                        <img src="<%=member.photo%>" alt="">
+                        <div class="info-overlay">
+                            <div class="member-name">
+                                <%= member.name %>
+                            </div>
+                            <div class="member-role">
+                                <%= member.role %>
+                            </div>
+                            <div class="icon">
+                                <i class="fa-brands fa-square-instagram"></i>
+                                <i class="fa-brands fa-linkedin"></i>
+                                <i class="fa-solid fa-envelope"></i>
                             </div>
                         </div>
-                        <% }); %>
-                </section>
+                    </div>
+                    <% }); %>
+            </section>
+        </div>
+
+        <div class="domain" style="padding-top: 2em;">
+            <h1>Photo Gallary</h1>
+            <div class="domains row row-cols-1 row-cols-md-3 g-4">
+                    <% club.photoGallery.forEach(photo => { %>
+                        <div class="card col text-center">
+                            <img src="<%= photo.imageUrl %>" alt="<%= photo.caption %>">
+                            <h3><%= photo.caption %></h3>
+                            <!-- <p><%= photo.description %></p> -->
+                        </div>
+                    <% }) %>
             </div>
+        </div>
+
+        
+
+
     </body>
