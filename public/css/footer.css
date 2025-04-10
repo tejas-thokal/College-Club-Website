@@ -13,13 +13,14 @@
 }
 
 .f-info{
-    background-color: #1a65c2a4;
+    background-color: #1b998b;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     height: 8rem;
     margin-top: 20px;
+    color:white;
     /* position:fixed;
     bottom:0px;
     width:100%; */

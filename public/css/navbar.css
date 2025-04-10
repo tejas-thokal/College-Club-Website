@@ -3,8 +3,13 @@
     font-weight: 600; 
 }
 
+.navbar-nav{
+    display: flex;
+    gap: 1.5em;
+}
+
 .navbar-brand{
-    margin-left: 15px;
+    margin-left: 10px;
     transition: transform 0.3s ease;
 }
 
@@ -21,7 +26,7 @@
 
 .navbar{
     /* backdrop-filter: blur(5px); */
-    background-color: white;
+    background-color: transparent;
     position: fixed;
     width: 100%;
     z-index: 999;
@@ -31,6 +36,7 @@
     width: 50%;
     border-radius: 20em;
     background-color:#1b998b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .nav-item{
@@ -39,4 +45,26 @@
 
 .nav-item:hover{
     transform: scale(1.1);
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #0d6efd;
+}
+
+.navbar-brand img {
+    border-radius: 10px;
+}
+
+
+@media (max-width:768px) {
+    .container-fluid{
+        width: 20em;
+        height: auto;
+        border-radius: 10px;
+    }
 }

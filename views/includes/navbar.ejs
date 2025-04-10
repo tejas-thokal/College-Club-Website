@@ -1,24 +1,34 @@
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg ">
   <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand d-lg-none" href="#">
+      <img src="/Images/logo.png" alt="Logo" width="40" height="40">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-      <ul class="navbar-nav">
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/college_club/home">Home</a>
+          <a class="nav-link active fw-semibold" aria-current="page" href="/college_club/home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/college_club/addEvent">Add Event</a>
+          <a class="nav-link fw-semibold" href="/college_club/addEvent">Add Event</a>
         </li>
-        <a class="navbar-brand" href="#">
-          <img src="/Images/logo.png" alt="Bootstrap" width="45" height="40">
-        </a>
+      </ul>
+
+      <a class="navbar-brand d-none d-lg-block" href="#">
+        <img src="/Images/logo.png" alt="Logo" width="45" height="40">
+      </a>
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">Clubs</a>
+          <a class="nav-link fw-semibold" href="/college_club/showClubs">Clubs</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact-us</a>
+          <a class="nav-link fw-semibold" href="#">Contact Us</a>
         </li>
       </ul>
     </div>

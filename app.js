@@ -70,7 +70,7 @@ async function main() {
 const eventSchema=new mongoose.Schema({
     Event_Name:{type:String,required:true},
     Event_Description:{type:String,required:true},
-    Event_Image:{type:String,default:"https://i.pinimg.com/736x/c6/f7/5c/c6f75cdadb474ef4b0761dc94a8fc731.jpg"},
+    Event_Image:{type:String,default:"https://i.pinimg.com/736x/86/43/5e/86435e42353bd8fe73b2179ee35164b6.jpg"},
     Event_Link:{type:String},
     Event_Type: { type: String, enum: ["Online", "Offline"], required: true },
     Event_Highlight: { type: String },
@@ -173,3 +173,12 @@ app.get("/college_club/showEvent/:id",async (req,res)=>{
         console.log(error);
     }
 });
+
+app.get("/college_club/showClubs",async (req,res)=>{
+    try{
+        let data = await Club.find();
+        res.render("showCLub",{data});
+    } catch(err){
+        console.log(err);
+    }
+})
