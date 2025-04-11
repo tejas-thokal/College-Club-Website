@@ -1,18 +1,63 @@
-.event-container{
+.event-container {
     width: 80%;
-    padding-top:3em;
-    margin-left: 5em;
+    max-width: 800px;
+    margin: 3em auto;
+    padding: 2em;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.btn{
+.btn {
     border: none;
     padding: 10px 20px;
-    background-color:#1b998b;
+    background-color: #1b998b;
     color: white;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
-.button{
+.btn:hover{
+    color: white;
+    background-color: #1b998b;
+}
+
+.button {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 1rem;
 }
+
+/* Optional: spacing between inputs */
+.mb-3 {
+    margin-bottom: 1rem;
+}
+
+/* Make form fully responsive */
+@media (max-width: 768px) {
+    .event-container {
+        width: 90%;
+        margin: 2em auto;
+        padding: 1em;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="time"],
+    select,
+    textarea {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+    }
+}
+

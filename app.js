@@ -182,3 +182,7 @@ app.get("/college_club/showClubs",async (req,res)=>{
         console.log(err);
     }
 })
+
+app.get("*",(req,res)=>{
+    res.render("error");
+});

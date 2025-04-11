@@ -247,32 +247,34 @@ a {
 /* ==== RESPONSIVE ==== */
 @media (max-width: 768px) {
     .home-img-container {
-        flex-direction: column;
-        text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
     }
-
+  
+    .img-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+  
+    .home-img {
+      width: 100%;
+      max-width: 18em;
+      height: auto;
+      object-fit: contain;
+      margin: 0 auto;
+      display: block;
+    }
+  
     .home-text {
-        padding: 1rem 0;
+      width: 100%;
+      padding: 1rem 0;
     }
-
-    .card-img-top {
-        height: 150px;
-    }
-
-    .home-text h1 {
-        font-size: 2.2rem;
-    }
-
-    .home-text p {
-        font-size: 1rem;
-    }
-
-    .card-outer{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-}
-
+  }  
