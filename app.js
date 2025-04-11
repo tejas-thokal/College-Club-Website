@@ -9,7 +9,7 @@ const path = require("path");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
 app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
@@ -42,16 +42,16 @@ const photoGallerySchema = new mongoose.Schema({
 // Define Social Links Schema
 const socialLinksSchema = new mongoose.Schema({
     instagram: String,
-    linkedin : String,
+    linkedin: String,
 });
 
 
 const clubSchema = new mongoose.Schema({
     name: { type: String, required: true },
     description: String,
-    clubLogo: {type: String ,required :true },
+    clubLogo: { type: String, required: true },
     vision: [String],
-    mission:[String],
+    mission: [String],
     social_links: socialLinksSchema,
     coreTeam: [coreTeamMemberSchema],
     domains: [domainSchema],
@@ -59,19 +59,19 @@ const clubSchema = new mongoose.Schema({
 });
 const Club = new mongoose.model("Club", clubSchema);
 
-main().then((res)=>console.log("database connected..."))
-.catch(err => console.log(err));
+main().then((res) => console.log("database connected..."))
+    .catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/wt_pbl');
+    await mongoose.connect('mongodb://127.0.0.1:27017/wt_pbl');
 }
 
 
-const eventSchema=new mongoose.Schema({
-    Event_Name:{type:String,required:true},
-    Event_Description:{type:String,required:true},
-    Event_Image:{type:String,default:"https://i.pinimg.com/736x/86/43/5e/86435e42353bd8fe73b2179ee35164b6.jpg"},
-    Event_Link:{type:String},
+const eventSchema = new mongoose.Schema({
+    Event_Name: { type: String, required: true },
+    Event_Description: { type: String, required: true },
+    Event_Image: { type: String, default: "https://i.pinimg.com/736x/86/43/5e/86435e42353bd8fe73b2179ee35164b6.jpg" },
+    Event_Link: { type: String },
     Event_Type: { type: String, enum: ["Online", "Offline"], required: true },
     Event_Highlight: { type: String },
     Event_Time: { type: String, required: true },
@@ -80,7 +80,7 @@ const eventSchema=new mongoose.Schema({
 
 })
 
-const Event=mongoose.model("Event",eventSchema);
+const Event = mongoose.model("Event", eventSchema);
 
 app.listen(port, () => {
     console.log("server is live....")
@@ -89,13 +89,13 @@ app.listen(port, () => {
 app.get("/college_club/home", async (req, res) => {
     try {
         let data = await Club.find();
-        let event= await Event.find();
+        let event = await Event.find();
 
         const onlineEvents = await Event.find({ Event_Type: "Online" });
         const offlineEvents = await Event.find({ Event_Type: "Offline" });
 
         //  Always send these when rendering home.ejs
-        res.render("home", { onlineEvents: onlineEvents || [], offlineEvents: offlineEvents || [] ,data,event});
+        res.render("home", { onlineEvents: onlineEvents || [], offlineEvents: offlineEvents || [], data, event });
 
         // console.log(event)
         // res.render("home.ejs", { data,event });
@@ -104,14 +104,14 @@ app.get("/college_club/home", async (req, res) => {
     }
 });
 
-app.get("/college_club/addEvent",(req,res)=>{
+app.get("/college_club/addEvent", (req, res) => {
     res.render("addEvent.ejs");
 });
 
 app.post("/college_club/addEvent", async (req, res) => {
     try {
         // Ensure the request body has the correct structure
-        const { Event_Name, Event_Description, Event_Image, Event_Link,Event_Type,Event_Date,Event_Time,Event_Location,Event_Highlight } = req.body;
+        const { Event_Name, Event_Description, Event_Image, Event_Link, Event_Type, Event_Date, Event_Time, Event_Location, Event_Highlight } = req.body;
 
         if (!Event_Name || !Event_Description || !Event_Link) {
             return res.status(400).json({ message: "Missing required fields" });
@@ -120,14 +120,14 @@ app.post("/college_club/addEvent", async (req, res) => {
         // Create a new event document
         let newEvent = new Event({
             Event_Name: req.body.Event_Name,
-            Event_Description:req.body.Event_Description,
-            Event_Image: req.body.Event_Image || undefined ,
-            Event_Link:req.body.Event_Link,
-            Event_Type:req.body.Event_Type,
-            Event_Highlight:req.body.Event_Highlight,
-            Event_Date:req.body.Event_Date,
-            Event_Time:req.body.Event_Time,
-            Event_Location:req.body.Event_Location
+            Event_Description: req.body.Event_Description,
+            Event_Image: req.body.Event_Image || undefined,
+            Event_Link: req.body.Event_Link,
+            Event_Type: req.body.Event_Type,
+            Event_Highlight: req.body.Event_Highlight,
+            Event_Date: req.body.Event_Date,
+            Event_Time: req.body.Event_Time,
+            Event_Location: req.body.Event_Location
         });
 
         // Save the event
@@ -161,28 +161,55 @@ app.get("/college-club/:id", async (req, res) => {
     }
 });
 
-app.get("/college_club/showEvent/:id",async (req,res)=>{
-    try{
-        let event=await Event.findById(req.params.id);
+app.get("/college_club/showEvent/:id", async (req, res) => {
+    try {
+        let event = await Event.findById(req.params.id);
         // console.log(event)
-        if(!event){
+        if (!event) {
             return res.status(404).send("Event not found")
         }
-        res.render("showEvent",{event})
-    } catch(error){
+        res.render("showEvent", { event })
+    } catch (error) {
         console.log(error);
     }
 });
 
-app.get("/college_club/showClubs",async (req,res)=>{
-    try{
+app.get("/college_club/showClubs", async (req, res) => {
+    try {
         let data = await Club.find();
-        res.render("showCLub",{data});
-    } catch(err){
+        res.render("showCLub", { data });
+    } catch (err) {
         console.log(err);
     }
 })
 
-app.get("*",(req,res)=>{
+
+const contactSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    number: String,
+    message: String
+});
+
+const Contact = mongoose.model("Contact", contactSchema);
+
+app.get("/college_club/contact_us", (req, res) => {
+    res.render("contact_us")
+});
+
+app.post("/college_club/contact_us", async (req, res) => {
+    const { name, email, number, message } = req.body;
+
+    try {
+        const newContact = new Contact({ name, email, number, message });
+        await newContact.save();
+        res.redirect("/college_club/home")
+    } catch (err) {
+        console.log(err);
+    }
+})
+
+
+app.get("*", (req, res) => {
     res.render("error");
 });

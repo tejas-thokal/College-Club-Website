@@ -1,3 +1,9 @@
+.main{
+    display:flex;
+    flex-direction: column;
+
+}
+
 .basicinfo {
     /* display: grid;
     grid-template-columns: 55% 45%; /* First div 30%, second div 70% */
@@ -15,7 +21,7 @@
     height: auto;
     /* padding: 2rem; */
     margin:7rem 0 5rem 0;
-    background: #383636
+    background: #f5f5f5
 }
 
 .sociallinks{
@@ -120,7 +126,7 @@
 .card:hover {
     /* transform: translateY(15px); */
     transform: scale(1.1);
-    background-color: #d4d4d4;
+    background-color: #fffefe;
     transition: transform 0.5s ease-in-out;
 
 }
