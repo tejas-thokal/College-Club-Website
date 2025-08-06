@@ -77,7 +77,39 @@ const sampleData = [
                 photo: "https://www.aisa-viit.com/images/Team/5-min.png",
                 role: "HR Manager",
                 department: "Artificial Intelligence and Data Science"
-            }
+            },
+            {
+                name: "Niraj Pandit",
+                email: "suryanshbest@gmail.com",
+                phone: "1234567890",
+                photo: "https://www.aisa-viit.com/images/Team/niraj.png",
+                role: "Finance Head",
+                department: "Artificial Intelligence and Data Science"
+            },
+            {
+                name: "Aryan Rajguru",
+                email: "aryanrajguru29@gmail.com",
+                phone: "1234567890",
+                photo: "https://www.aisa-viit.com/images/Team/aryan.png",
+                role: "V & P Head",
+                department: "Artificial Intelligence and Data Science"
+            },
+            {  
+                name: "Pranay Dabhade",
+                email: "pranay.p.dabhade13@gmail.com",
+                phone: "1234567890",
+                photo: "https://www.aisa-viit.com/images/Team/pranay.png",
+                role: "Technical Head",
+                department: "Artificial Intelligence and Data Science"
+            },
+            {
+                name: "Dhimahi Patel",
+                email: "dhimahipatel297@gmail.com",
+                phone: "1234567890",
+                photo: "https://www.aisa-viit.com/images/Team/dhimahi.png",
+                role: "Doc Head",
+                department: "Artificial Intelligence and Data Science"
+            },
         ],
 
         facultyTeam: [
@@ -105,7 +137,7 @@ const sampleData = [
             {
                 name: "Technical Team",
                 description: "The Technical Team is responsible for managing and developing digital solutions, ensuring seamless functionality across platforms. It handles website development, software maintenance, and technical troubleshooting for projects and events. The team collaborates to innovate and implement cutting-edge technologies to enhance user experience and efficiency.",
-                photo: "https://www.aisa-viit.com/images/domains/event.png",
+                photo: "https://i.pinimg.com/736x/1c/90/e5/1c90e54c827284f57c8f738a9b612b6a.jpg",
                 skillsRequired: [
                     "Programming (HTML, CSS, JavaScript, Python, Java)",
                     "Database Management (MySQL, MongoDB, PostgreSQL)",
@@ -358,60 +390,84 @@ const sampleData = [
         },
         coreTeam: [
             {
-                name: "Atharv Divekar",
-                email: "atharvdivekar@gmail.com",
+                name: "Pragati Patil",
+                email: "pragatipatil@gmail.com",
                 phone: "1234567890",
-                photo: "https://example.com/atharv.jpg",
+                photo: "https://cdn.ieeeviitsb.in/committeeData/Pragati%20Patil.jpeg?Expires=1744379438&Key-Pair-Id=KWEN588JG0UGT&Signature=JhTdPAH5lAztH2Qsyt7TwoXXclXlyjqBxeqn3~0z1xCkB5WM6jMVZmIL4nnmf~XA0daz~y~22IHMP9pAQv0dDePnhNM5-JTnDMrzJpB~nQWXgi8t14W0oN533hOeGPDmc1goI~rY78rD76kiRXB1K-GYGezlLe-lZ4NYflmEdIu0AYllF1MxencG~vuZjv7b7uWzF2AXTgSjPyXqJm-qUjbtmvMYvLo77erm4ePLA8lpL1AZBzXz3ZKd88rnv73KstZw4Im8TdvA43x0uShiq9sC0SIZZxhT6PRCBY0XwJkNSCdop4~TUQW4lvEoompwPcY4-x1D2jB0HwukTy8-VQ__",
                 role: "Chairperson",
                 department: "Electronics and Telecommunication Engineering"
             },
             {
-                name: "Rushikesh Patil",
-                email: "rushikeshpatil@gmail.com",
+                name: "Apratim Phadke",
+                email: "Apratimphadke@gmail.com",
                 phone: "1234567890",
-                photo: "https://example.com/rushikesh.jpg",
-                role: "Technical Team Associate",
-                department: "Artificial Intelligence and Data Science"
+                photo: "https://cdn.ieeeviitsb.in/committeeData/Apratim%20Phadke.jpeg?Expires=1744379438&Key-Pair-Id=KWEN588JG0UGT&Signature=h0FAmTGQHQQ9gZ-oAlsMPstQ-o4vMaZ~6cF2xxCjrbDhwZTdz5OcT4OfNQbtoQHM0iIjoYuckd1x13i6c17MU5-Y8xpRdMfbOmpoIkVEkKeGjTyTNQEAGyvL9iEvTJLKWK0-fqRD-I-aJT4ivbZe1g~jjXFMXW3E87vFj5csRxQ3LWhCW-Kapt5ARGoCv2SEWBuCiMururxt7flihT3A0mHR2dgR0YynF97wOUqbyHgH9rjojOzqB4V43a9zrekLBAvVeKR1nJDpzKiSH6sCGK3v03RIDIfQJXYoJ6lvsVImsHF-6rJGxILqwiYqi6s3sH52zi4j7Jt-ALmlc2dx2g__",
+                role: "General Manager",
+                department: "Electronics and Telecommunication Engineering"
             },
             {
-                name: "Pranav Kshirsagar",
-                email: "pranavkshirsagar@gmail.com",
+                name: "Sakshi Girase",
+                email: "Sakshigirase@gmail.com",
                 phone: "1234567890",
-                photo: "https://example.com/pranav.jpg",
+                photo: "https://cdn.ieeeviitsb.in/committeeData/Sakshi%20Girase.jpeg?Expires=1744379438&Key-Pair-Id=KWEN588JG0UGT&Signature=NJaDKrDsMjr5BILfomX3Uo173VsKEBruwzQQU-7USEoXCOZWuQDtMrxFzv6JYMa27Haewbf4tX4AXyRxXwQJKdn89t2eHYzwMLpBg7MtgxHIbKZ0~4ZUe6TMeW0OX~gXBTPwTUQCdZc5s4fr6yLJozsmlUhi-TPuBzD5srcxETsUn46rPYAq2Uq00oTI4WLrSqRENHzLNzg~fzOSKSYKUl-xpIlIPjWWdCg7WEd1do-z~~MhgpRudZjPQCcLkHE0UhvcwhNdhn77sCIkQctPPv6kqpkqtW~9CHs7yJ4M2X6~N8u~GCFGlGkV9AQ3O839zbwzhLvgs2PnnKrQzatUQA__",
                 role: "Vice Chairperson",
-                department: "Computer Engineering"
+                department: "Electronics and Telecommunication Engineering"
             },
             {
-                name: "Mrunmayee Patil",
-                email: "mrunmayeepatil@gmail.com",
+                name: "Pratik Yadav",
+                email: "Pratikyadav@gmail.com",
                 phone: "1234567890",
-                photo: "https://example.com/mrunmayee.jpg",
+                photo: "https://cdn.ieeeviitsb.in/committeeData/Pratik%20Yadav.jpeg?Expires=1744379438&Key-Pair-Id=KWEN588JG0UGT&Signature=AtdWX1NH84oN3oZHie1mKBji9lwq-5LepgLT0hymuUPq8p-260b-tTnNWcVcJjmRW0ogMLWkSCn-ZHDICHmEWA3wEzobmzWmLC7Mgoy8Mqhscne9Z4nVOVAynDcqrfYRnugryxL9Ew~yi5oWoMgurQUfceBEN7TTz2BXaaA-jkiyLpCWoOluw5zubjKYJ5WyVr~W-hBZBwnMMSBDmkQ8AYg5q2Arb-teIOqlkUc8qurppl8FcInf3cs6h3E1sSeTL2PgfR~Aw29X2lY011HDyxQKrWRUibf81Z0Orcr53KYDSP9eRiNHl6a4hdCjfK7SrGZFZFE45AWu2PuKW2TYXQ__",
                 role: "Secretary",
                 department: "Electronics and Telecommunication Engineering"
             },
             {
-                name: "Vedant Kulkarni",
-                email: "vedantkulkarni@gmail.com",
+                name: "Atharva Joshi",
+                email: "Atharvajoshi@gmail.com",
                 phone: "1234567890",
-                photo: "https://example.com/vedant.jpg",
+                photo: "https://cdn.ieeeviitsb.in/committeeData/Atharva%20Joshi.jpeg?Expires=1744379438&Key-Pair-Id=KWEN588JG0UGT&Signature=t7MkZdXGw3D0pRoOMSmEvzXIzmrG2Xao-xrVHFMFbfjZ7P4LVSg9Zal87aY8JqT84fvxtNWmoM10mrTjHCYUdEwpQ0BX3eqmBBET4JVGo7CjfhEepEHjfo7kgg9Vjn2LabskVxPP4C7Un6iHzM5YVPnNWDoY9WR06AroZu-lcJhlkQbERb7UtLI46ng~8whie-YCkReyoB7zZLwO6N2Qi9r0c3JteNjeHi94vUxPIdLQuzOGkdd3k9FO334vdlMN8l7qa4c7hveC8wWHseBxza7FgZx4P1NhQBr6j79AnnNwDxPeLcepueEa~5dEcNSJ0B1BEI6P00wiwbLcvnw0uA__",
                 role: "Treasurer",
-                department: "Computer Engineering"
-            },
-            {
-                name: "Prof. Rajesh Chavan",
-                email: "rajesh.chavan@viit.ac.in",
-                phone: "9876543210",
-                photo: "https://example.com/rajesh.jpg",
-                role: "Faculty Advisor",
                 department: "Electronics and Telecommunication Engineering"
             },
             {
-                name: "Prof. Supriya Patil",
-                email: "supriya.patil@viit.ac.in",
+                name: "Darshith Shetty",
+                email: "Darshithshetty@viit.ac.in",
+                phone: "9876543210",
+                photo: "https://cdn.ieeeviitsb.in/committeeData/Darshith%20Shetty.jpeg?Expires=1744379438&Key-Pair-Id=KWEN588JG0UGT&Signature=KgAT9oVwhk51pOWM5dGzv2ns-6VClFsS6vsypKu7U-ccOCHSv-vVH9oL0cdQroAVkPColY2Jn6fXu212kQDUS22QcKBHly2RWNWmdz0SmIWUlsmMsKSsvl9GphE-SIgJ~RmMq8CbQapgusKr1KXjL641V8DRHa~4vI62QZi-fF8XKbcoKkU3A9QKPEIy8vuOWaozHUIwoq3ITbiqppqVgVzEVo7Y3eYXdBIwa~HTqcA3LmzmFFoUbvUL5VhAtI5zAq9xXfZpi4f4JiwVZuEzC-AHQh4i8mC8azbg~i7VfNps5A6ZT5GO52bvNS5l~A87HtehWmTJZk0RicOx5CpISg__",
+                role: "Joint Secretoryr",
+                department: "Electronics and Telecommunication Engineering"
+            },
+            {
+                name: "Mayuresh Marade",
+                email: "Mayureshmarade@viit.ac.in",
                 phone: "8765432109",
-                photo: "https://example.com/supriya.jpg",
-                role: "Faculty Coordinator",
-                department: "Computer Engineering"
+                photo: "https://cdn.ieeeviitsb.in/committeeData/Mayuresh%20Marade.jpeg?Expires=1744379438&Key-Pair-Id=KWEN588JG0UGT&Signature=vsbluObKzZlZ0U585a6asuEE-U1q81zA8-jZvOhmgje2gjfIYnOSOjNqTTf0V8sjATq64U3k1q55sqZfpy2jNmpmHi5zgGJJoRCVRsvVjD4rXmxWjtCjZAT48-GdX1NXhiebbKAjVIIlZ0jGDx-yvLWZ~cQnC5hheN1ZuDl4qCcof6fuXA6BFREsoqbrKFWQ3ZooRUDDNrtGMQQnGROniMKvFgU9uL45dCZ15d4z7Ge1likMCO85t2WHIhtWxCo8Z15GmknycgfcJtQlnVzR~dt~F-fqR2wjMIhOLKDXhTsQevD9ooUxKTxuFl4YFZb8LGbCugK5COtMdy2CSmWf7w__",
+                role: "Joint Treasurer",
+                department: "Electronics and Telecommunication Engineering"
+            },
+            {
+                name: "Abhishek Mallav",
+                email: "Abhishekmallav@viit.ac.in",
+                phone: "8888744203",
+                photo: "https://cdn.ieeeviitsb.in/committeeData/Abhishek%20Mallav.jpeg?Expires=1744379438&Key-Pair-Id=KWEN588JG0UGT&Signature=4o2CKl9qdRp4CNbMnff6SNrIjkZJV3AfMivQg47MCJvEUZ~VNfwislViDO6hnWUcYpngQ1HmaewkFH6F7DN-kvc3Gqbh6RcVz4XMg79JuLHWic~nOjD7CMnk-Ri7QbXQ5967jMTu3uaygylQSZrcvxRlJv8aAqqgc3v3kLfYbqneKytNF60eUWL5wYs8DBKoWO58EiCSGXkcuemD~3dXcWynubt5LFDMmZODLRJ6lZUeJjMQk~sb6oRMbjKX61X8bj1~WZcW2XqmDhL4~Pq1q8ypLVVO1TTHMlYViDQX3JrBHoIZJvIOqogrm8AT3Fi5yCABg3KxO76vovWzNxXEtw__",
+                role: "Technical Head",
+                department: "Electronics and Telecommunication Engineering"
+            },
+            {
+                name: "Atharva Khandagale",
+                email: "Atharvakhandagale@viit.ac.in",
+                phone: "8888744203",
+                photo: "https://cdn.ieeeviitsb.in/committeeData/Atharva%20Khandagale.jpeg?Expires=1744379439&Key-Pair-Id=KWEN588JG0UGT&Signature=4oaxtXRZparL9vGx7mhavZO-8QdsMiwtSoXKvjjgGcnEbRcGxd73vEXvyjFjC8jz2BsjOkH0pZcEdQrVsIf8fEZqk6XyH59deMCFPtPz7ia0f6i2wu50ua-9xp0nZvHzymdeWeFpneLtcXdV1CLU5tTy~5U6egzn3BUUFtlN2todXnIINITqkRIucNC5eJ2bE7xq1ljC7GW3Lofwfmno0wBT2KUFMagDmBeFW-sH9yUnWnLYQRXXJzTh7Ban77IEmNtFw0OkTT6itdpR83nBuR7NSC545XaNGvRMetUZ9sGQOgnuadNev57bF8mjFp9nflKX442tTsWW~dyV07LrrA__",
+                role: "Web Devlopment Head",
+                department: "Electronics and Telecommunication Engineering"
+            },
+            {
+                name: "Hamza Khanji",
+                email: "Hamzakhanjia@viit.ac.in",
+                phone: "8888744203",
+                photo: "https://cdn.ieeeviitsb.in/committeeData/Hamza%20Khanji.jpeg?Expires=1744379439&Key-Pair-Id=KWEN588JG0UGT&Signature=uDaRqEui~w6rbQutIcAnL6rjrnnC4OWNDcvXbZeMigAkpisZ-DeD29Nv9XmyaTAaEKOtrs1LambIxnPBhKShEDYvcMFsmB8e6IxGi2p2anktxY7eQiPz0PTNMI6WlUmjNKxwTzN78Lh3cbwUZ8D4~pqnkkKk5085am4koBteAwthy0qHeNIha~yg6YAYC5qZJ-No-FBmPsTGq3FCxKXokUtnIQB7Fq9aoB0uNBh6cudlwd5DkoIu9k3F3RNVTWXjInvQU77tUVV28l2pDk6E-k7a~xTg~2UVqtGQAyYLjNLBOZ9cv-UTGKha2YvGSmYa2oN0Z8h5aNYza5AAQjxTQA__",
+                role: "Documentation Head",
+                department: "Electronics and Telecommunication Engineering"
             }
         ],
 
@@ -439,7 +495,7 @@ const sampleData = [
             {
                 name: "Technical Team",
                 description: "The Technical Team is responsible for managing and developing digital solutions, ensuring seamless functionality across platforms. It handles website development, software maintenance, and technical troubleshooting for projects and events. The team collaborates to innovate and implement cutting-edge technologies to enhance user experience and efficiency.",
-                photo: "https://www.aisa-viit.com/images/Team/1-min.png",
+                photo: "https://i.pinimg.com/736x/1c/90/e5/1c90e54c827284f57c8f738a9b612b6a.jpg",
                 skillsRequired: [
                     "Programming (HTML, CSS, JavaScript, Python, Java)",
                     "Database Management (MySQL, MongoDB, PostgreSQL)",
@@ -586,39 +642,74 @@ const sampleData = [
         ],
         photoGallery: [
             {
-                imageUrl: "https://example.com/images/ieee-tech-symposium.jpg",
-                caption: "IEEE Tech Symposium",
+                imageUrl: "https://iic.viit.ac.in/images/IEEE/DSC_01.jpg",
+                caption: "IEEE National Conference",
                 description: "A flagship event featuring keynote speakers, technical paper presentations, and panel discussions."
             },
             {
-                imageUrl: "https://example.com/images/ieee-tech-symposium.jpg",
-                caption: "IEEE Hackathon 2024",
+                imageUrl: "https://iic.viit.ac.in/images/IEEE/DSC_02.jpg",
+                caption: "IEEE National Conference",
                 description: "A 24-hour coding competition where students develop innovative tech solutions."
             },
             {
-                imageUrl: "https://example.com/images/ieee-tech-symposium.jpg",
-                caption: "Robo Wars",
+                imageUrl: "https://iic.viit.ac.in/images/IEEE/DSC_03.jpg",
+                caption: "IEEE National Conference",
                 description: "An electrifying robotics competition where teams battle their self-built robots."
             },
             {
-                imageUrl: "https://example.com/images/ieee-tech-symposium.jpg",
-                caption: "AI & IoT Workshop",
+                imageUrl: "https://iic.viit.ac.in/images/IEEE/DSC_04.jpg",
+                caption: "IEEE National Conference",
                 description: "Hands-on training on Artificial Intelligence and Internet of Things applications."
             },
             {
-                imageUrl: "https://example.com/images/ieee-tech-symposium.jpg",
-                caption: "Industry Connect Visit",
+                imageUrl: "https://iic.viit.ac.in/images/IEEE/DSC_07.jpg",
+                caption: "IEEE National Conference",
+                description: "A visit to leading tech industries to understand real-world applications of engineering."
+            },
+            {
+                imageUrl: "https://iic.viit.ac.in/images/IEEE/DSC_06.jpg",
+                caption: "IEEE National Conference",
+                description: "A visit to leading tech industries to understand real-world applications of engineering."
+            },
+            {
+                imageUrl: "https://iic.viit.ac.in/images/IEEE/eh1.jpeg",
+                caption: "THE ERROR HUNT IEEE",
+                description: "A visit to leading tech industries to understand real-world applications of engineering."
+            },
+            {
+                imageUrl: "https://iic.viit.ac.in/images/IEEE/eh2.jpeg",
+                caption: "THE ERROR HUNT IEEE",
+                description: "A visit to leading tech industries to understand real-world applications of engineering."
+            },
+            {
+                imageUrl: "https://iic.viit.ac.in/images/IEEE/eh3.jpeg",
+                caption: "THE ERROR HUNT IEEE",
+                description: "A visit to leading tech industries to understand real-world applications of engineering."
+            },
+            {
+                imageUrl: "https://iic.viit.ac.in/images/IEEE/ad1.jpeg",
+                caption: "THE ADEPTUS IEEE",
+                description: "A visit to leading tech industries to understand real-world applications of engineering."
+            },
+            {
+                imageUrl: "https://media.licdn.com/dms/image/v2/D4D22AQGhiNgl3g3yJw/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1725257654346?e=1747267200&v=beta&t=Djo-sC7XSrhkPEZSU5qLfRAvS-mkHmTsvv3bUjp1vj8",
+                caption: "Python Odyssey",
+                description: "A visit to leading tech industries to understand real-world applications of engineering."
+            },
+            {
+                imageUrl: "https://cdn.ieeeviitsb.in/eventsData/Gallery/Python1.jpg?Expires=1744382807&Key-Pair-Id=KWEN588JG0UGT&Signature=Aa0DEYuK~E7tsbIxWClI9-m5h3N6nfOPSoK6jyBI1-0kWVUZo4dlAG00aNBgQ2FJvPtMduZNCxKuR3AitVZ59BhmItY61FCCsdhf8KqO~69-3wbaDv2SS7URl1Cn1blTP-JyiTBsH-zTxwjEX8SXUvVKQZZ2AynUL8NgxRwFDyyOlBtkuXsp7rm2b1YhTXM94Bb6J1mcKIdLdUkWPryHxepasKszkQvj0ZZswX507U-MXmEaJxrojG564YQzxW7rcdiS9gyZnuIM4Ntk0Y4Fg5BCqYQL8VgwDoGI5texN0FF3MqAUuDM1BJX41cp~RSlaXM1SYJp5A1O7yBgeGpyPA__",
+                caption: "Python Odyssey",
                 description: "A visit to leading tech industries to understand real-world applications of engineering."
             }
         ]
     },
 
 
-    // Third club EDC CLUB 
+    // Third club EDC CLUB --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     {
         name: "EDC Entrepreneurship Development Cell",
-        description: "The Entrepreneurship Development Cell (EDC) at VIIT Pune is dedicated to fostering a culture of innovation and entrepreneurship. It empowers students to develop their entrepreneurial mindset, providing mentorship, resources, and networking opportunities to transform ideas into successful ventures.",
+        description: "Entrepreneurship Development Cell was established to push students to the forefront of the outside world but also help raise their quality and worth in the industry. To give an understanding & hands-on experience of working of an organization & its various departments contributing to the organisation's overall success. To promote, sustain, practice and manifest the spirit of entrepreneurship among individuals by providing them a platform to convert their ideas into successful ventures.",
     
         vision: [
             "To create a dynamic ecosystem that nurtures and supports student entrepreneurs.",
@@ -642,59 +733,51 @@ const sampleData = [
         },
         coreTeam: [
             {
-                name: "Rajesh Sharma",
-                email: "rajeshsharma.edc@gmail.com",
+                name: "Ojas Deshpande",
+                email: "Ojasoeshpande.edc@gmail.com",
                 phone: "9876543210",
-                photo: "https://www.viit.ac.in/images/clubs/EDC-Team/Rajesh-Sharma.png",
+                photo: "https://edcviit.com/assets/img/Our%20Team/Ojas.png",
                 role: "President",
                 department: "Entrepreneurship & Innovation"
             },
             {
-                name: "Pooja Nair",
-                email: "poojanair.edc@gmail.com",
+                name: "Aum Chhajed",
+                email: "Aumchhajed@gmail.com",
                 phone: "9876543211",
-                photo: "https://www.viit.ac.in/images/clubs/EDC-Team/Pooja-Nair.png",
-                role: "Vice President",
+                photo: "https://edcviit.com/assets/img/Our%20Team/Aum.png",
+                role: "General Manager",
                 department: "Entrepreneurship & Innovation"
             },
             {
-                name: "Amit Deshmukh",
-                email: "amitdeshmukh.edc@gmail.com",
+                name: "Krishna Jodh",
+                email: "Krishnajodh@gmail.com",
                 phone: "9876543212",
-                photo: "https://www.viit.ac.in/images/clubs/EDC-Team/Amit-Deshmukh.png",
-                role: "Secretary",
+                photo: "https://edcviit.com/assets/img/Our%20Team/Krishna.png",
+                role: "Cheif Finance Officer",
                 department: "Entrepreneurship & Innovation"
             },
             {
-                name: "Ananya Kulkarni",
-                email: "ananyakulkarni.edc@gmail.com",
+                name: "Sanket Nabade",
+                email: "Sanketnabade@gmail.com",
                 phone: "9876543213",
-                photo: "https://www.viit.ac.in/images/clubs/EDC-Team/Ananya-Kulkarni.png",
-                role: "Treasurer",
+                photo: "https://edcviit.com/assets/img/Our%20Team/Sanket_N.png",
+                role: "General secratory",
                 department: "Entrepreneurship & Innovation"
             },
             {
-                name: "Rohan Patil",
-                email: "rohanpatil.edc@gmail.com",
-                phone: "9876543214",
-                photo: "https://www.viit.ac.in/images/clubs/EDC-Team/Rohan-Patil.png",
-                role: "Marketing Head",
-                department: "Entrepreneurship & Innovation"
-            },
-            {
-                name: "Sakshi Verma",
-                email: "sakshiverma.edc@gmail.com",
+                name: "Parth Kulat",
+                email: "Parthkulat@gmail.com",
                 phone: "9876543215",
-                photo: "https://www.viit.ac.in/images/clubs/EDC-Team/Sakshi-Verma.png",
-                role: "Event Coordinator",
+                photo: "https://edcviit.com/assets/img/Our%20Team/Parth.png",
+                role: "Technical Head",
                 department: "Entrepreneurship & Innovation"
             },
             {
-                name: "Prof. Anil Mehta",
-                email: "anil.mehta@viit.ac.in",
+                name: "Srivatsa Ankamwar",
+                email: "Srivatsaankamwar@viit.ac.in",
                 phone: "9988776655",
-                photo: "https://www.viit.ac.in/images/faculty/anil-mehta.png",
-                role: "Faculty Mentor",
+                photo: "https://edcviit.com/assets/img/Our%20Team/Srivatsa.png",
+                role: "Start-Up Executive",
                 department: "Entrepreneurship & Innovation"
             }
         ],
@@ -723,7 +806,7 @@ const sampleData = [
             {
                 name: "Technical Team",
                 description: "The Technical Team is responsible for managing and developing digital solutions, ensuring seamless functionality across platforms. It handles website development, software maintenance, and technical troubleshooting for projects and events. The team collaborates to innovate and implement cutting-edge technologies to enhance user experience and efficiency.",
-                photo: "https://www.aisa-viit.com/images/Team/1-min.png",
+                photo: "https://i.pinimg.com/736x/1c/90/e5/1c90e54c827284f57c8f738a9b612b6a.jpg",
                 skillsRequired: [
                     "Programming (HTML, CSS, JavaScript, Python, Java)",
                     "Database Management (MySQL, MongoDB, PostgreSQL)",
@@ -836,28 +919,58 @@ const sampleData = [
         ],
         photoGallery: [
             {
-                imageUrl: "https://example.com/images/ieee-tech-symposium.jpg",
-                caption: "IEEE Tech Symposium",
+                imageUrl: "https://www.viit.ac.in/images/Life-at-VIIT/EDC/EDC-1.jpg",
+                caption: "Vishwapreneur",
                 description: "A flagship event featuring keynote speakers, technical paper presentations, and panel discussions."
             },
             {
-                imageUrl: "https://example.com/images/ieee-tech-symposium.jpg",
-                caption: "IEEE Hackathon 2024",
+                imageUrl: "https://www.viit.ac.in/images/Life-at-VIIT/EDC/EDC-2.jpg",
+                caption: "Vishwapreneur",
                 description: "A 24-hour coding competition where students develop innovative tech solutions."
             },
             {
-                imageUrl: "https://example.com/images/ieee-tech-symposium.jpg",
-                caption: "Robo Wars",
+                imageUrl: "https://www.viit.ac.in/images/Life-at-VIIT/EDC/EDC-3.jpg",
+                caption: "Vishwapreneur",
                 description: "An electrifying robotics competition where teams battle their self-built robots."
             },
             {
-                imageUrl: "https://example.com/images/ieee-tech-symposium.jpg",
-                caption: "AI & IoT Workshop",
+                imageUrl: "https://www.viit.ac.in/images/Life-at-VIIT/EDC/EDC-4.jpg",
+                caption: "Vishwapreneur",
                 description: "Hands-on training on Artificial Intelligence and Internet of Things applications."
             },
             {
-                imageUrl: "https://example.com/images/ieee-tech-symposium.jpg",
-                caption: "Industry Connect Visit",
+                imageUrl: "https://www.viit.ac.in/images/Life-at-VIIT/EDC/EDC-5.jpg",
+                caption: "Vishwapreneur",
+                description: "A visit to leading tech industries to understand real-world applications of engineering."
+            },
+            {
+                imageUrl: "https://www.viit.ac.in/images/Life-at-VIIT/EDC/EDC-14.png",
+                caption: "WorkShops Session",
+                description: "A visit to leading tech industries to understand real-world applications of engineering."
+            },
+            {
+                imageUrl: "https://www.viit.ac.in/images/Life-at-VIIT/EDC/EDC-14.png",
+                caption: "WorkShops Session",
+                description: "A visit to leading tech industries to understand real-world applications of engineering."
+            },
+            {
+                imageUrl: "https://www.viit.ac.in/images/Life-at-VIIT/EDC/EDC-15.jpg",
+                caption: "WorkShops Session",
+                description: "A visit to leading tech industries to understand real-world applications of engineering."
+            },
+            {
+                imageUrl: "https://www.viit.ac.in/images/Life-at-VIIT/EDC/EDC-19.jpg",
+                caption: "Agnitio B-Plan Competition",
+                description: "A visit to leading tech industries to understand real-world applications of engineering."
+            },
+            {
+                imageUrl: "https://www.viit.ac.in/images/Life-at-VIIT/EDC/EDC-20.jpg",
+                caption: "Agnitio B-Plan Competition",
+                description: "A visit to leading tech industries to understand real-world applications of engineering."
+            },
+            {
+                imageUrl: "https://www.viit.ac.in/images/Life-at-VIIT/EDC/EDC-20.jpg",
+                caption: "Agnitio B-Plan Competition",
                 description: "A visit to leading tech industries to understand real-world applications of engineering."
             }
         ]

@@ -179,7 +179,8 @@ app.get("/college_club/showClubs", async (req, res) => {
         let data = await Club.find();
         res.render("showCLub", { data });
     } catch (err) {
-        console.log(err);
+        console.error("Error occur:", error);
+        res.status(500).json({ message: "Internal Server Error" });
     }
 })
 
@@ -207,7 +208,12 @@ app.post("/college_club/contact_us", async (req, res) => {
     } catch (err) {
         console.log(err);
     }
-})
+});
+
+app.get("/collage_club/domainInfo",async(req,res)=>{
+    let club = await Club.findOne();
+    res.render("domainInfo",{club});
+});
 
 
 app.get("*", (req, res) => {

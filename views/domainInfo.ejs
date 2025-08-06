@@ -1,0 +1,23 @@
+<% layout('/layouts/boilerplate') -%>
+
+<body>
+
+    <h1>Our Domains</h1>
+    <div class="domain-container">
+        <% club.domains.forEach(function(domain) { %>
+            <div class="domain-card">
+                <img src="https://i.pinimg.com/736x/1c/90/e5/1c90e54c827284f57c8f738a9b612b6a.jpg" alt="<%= domain.name %>">
+                <h2><%= domain.name %></h2>
+                <p><strong>Description:</strong> <%= domain.description %></p>
+                <p><strong>Work in this Domain:</strong> <%= domain.workInThisDomain %></p>
+                <p><strong>Skills Required:</strong></p>
+                <ul class="skills">
+                    <% domain.skillsRequired.forEach(function(skill) { %>
+                        <li><%= skill %></li>
+                    <% }) %>
+                </ul>
+            </div>
+        <% }) %>
+    </div>
+
+</body>

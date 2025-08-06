@@ -1,29 +1,31 @@
 <% layout('/layouts/boilerplate') -%>
 
     <body>
-        <form method="post" action="/college_club/contact_us">
-            <div>
-                <H1>Contact With Us </H1>
+        <div class="body">
+            <form method="post" action="/college_club/contact_us">
                 <div>
-                    <label for="name">Name :</label>
-                    <input type="text" placeholder="Enter your name" name="name" required>
+                    <H1>Contact With Us </H1>
+                    <div>
+                        <label for="name">Name :</label>
+                        <input type="text" placeholder="Enter your name" name="name" required>
+                    </div>
+    
+                    <div>
+                        <label for="email">Email :</label>
+                        <input type="email" placeholder="Enter your email" name="email"required>
+                    </div>
+                    <div>
+                        <label for="number">Mobile No :</label>
+                        <input type="number" placeholder="Enter your Mobile number" name="number" required>
+                    </div>
+                    <div>
+                        <label for="message">Message :</label>
+                        <textarea type="text" placeholder="Type your message" name="message" required></textarea>
+                    </div>
+                    <div class="mb-3 button">
+                        <button type="submit" class="add-btn btn">Submit</button>
+                    </div>
                 </div>
-
-                <div>
-                    <label for="email">Email :</label>
-                    <input type="email" placeholder="Enter your email" name="email"required>
-                </div>
-                <div>
-                    <label for="number">Mobile No :</label>
-                    <input type="number" placeholder="Enter your Mobile number" name="number" required>
-                </div>
-                <div>
-                    <label for="message">Message :</label>
-                    <textarea type="text" placeholder="Type your message" name="message" required></textarea>
-                </div>
-                <div class="mb-3 button">
-                    <button type="submit" class="add-btn btn">Submit</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </body>
